@@ -29,7 +29,7 @@
 <body class="hold-transition dark-skin theme-primary sidebar-mini fixed">
 
 <div class="wrapper">
-    <div id="loader"></div>
+{{--    <div id="loader"></div>--}}
 
     <header class="main-header dark-skin">
         <div class="d-flex align-items-center logo-box justify-content-start">
@@ -105,77 +105,29 @@
                 <div class="multinav-scroll" style="height: 100%;">
                     <!-- sidebar menu-->
                     <ul class="sidebar-menu" data-widget="tree">
-                        <li class="treeview">
-                            <a href="#">
-                                <i data-feather="monitor"></i>
-                                <span>Dashboard</span>
-                                <span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
+                        <li>
+                            <a href="currency_exchange.html">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span style="margin-left: -15px;">Dashboard</span>
                             </a>
-                            <ul class="treeview-menu">
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Options 1 to 5
-                                        <span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="index.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 1</a></li>
-                                        <li><a href="index2.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 2</a></li>
-                                        <li><a href="index3.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 3</a></li>
-                                        <li><a href="index4.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 4</a></li>
-                                        <li><a href="index5.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 5</a></li>
-                                    </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Options 6 to 10
-                                        <span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="index6.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 6</a></li>
-                                        <li><a href="index7.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 7</a></li>
-                                        <li><a href="index8.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 8</a></li>
-                                        <li><a href="index9.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 9</a></li>
-                                        <li><a href="index10.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 10</a></li>
-                                    </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Options 11 to 15
-                                        <span class="pull-right-container">
-								<i class="fa fa-angle-right pull-right"></i>
-							</span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="index11.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 11</a></li>
-                                        <li><a href="index12.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 12</a></li>
-                                        <li><a href="index13.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 13</a></li>
-                                        <li><a href="index14.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 14</a></li>
-                                        <li><a href="index15.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dash 15</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i data-feather="bar-chart-2"></i>
-                                <span>Reports</span>
-                                <span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
+                        <li>
+                            <a href="currency_exchange.html">
+                                <i class="fas fa-arrow-down"></i>
+                                <span style="margin-left: -15px;">Deposit</span>
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="reports_transactions.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Transactions</a></li>
-                                <li><a href="reports_top_gainers_losers.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Top Gainers/Losers</a></li>
-                                <li><a href="reports_market_capitalizations.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Market Capitalizations</a></li>
-                                <li><a href="reports_crypto_stats.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Crypto Stats</a></li>
-                            </ul>
+                        </li>
+                        <li>
+                            <a href="currency_exchange.html">
+                                <i class="far fa-arrow-alt-circle-up"></i>
+                                <span style="margin-left: -15px;">Withdraw</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="currency_exchange.html">
+                                <i class="fas fa-history"></i>
+                                <span style="margin-left: -15px;">Transactions</span>
+                            </a>
                         </li>
                         <li class="treeview">
                             <a href="#">
