@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepositController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -27,6 +28,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('kyc', [KYCController::class, 'kyc'])->name('kyc');
     Route::post('store/kyc', [KYCController::class, 'storeKyc'])->name('storeKyc');
+
+    // Deposit Route
+    Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
+    Route::get('crypto/deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
 });
 
 

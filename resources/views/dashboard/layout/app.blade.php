@@ -106,13 +106,13 @@
                     <!-- sidebar menu-->
                     <ul class="sidebar-menu" data-widget="tree">
                         <li>
-                            <a href="currency_exchange.html">
+                            <a href="{{ route('user.dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span style="margin-left: -15px;">Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="currency_exchange.html">
+                            <a href="{{ route('user.deposit') }}">
                                 <i class="fas fa-arrow-down"></i>
                                 <span style="margin-left: -15px;">Deposit</span>
                             </a>

@@ -12,5 +12,6 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::patch('updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
     Route::post('storePassword', [UserController::class, 'storePassword'])->name('storePassword');
 
+    
 });
 
