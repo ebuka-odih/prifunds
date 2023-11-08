@@ -1,74 +1,71 @@
 @extends('dashboard.layout.app')
 @section('content')
 
-    <div class="content-wrapper light-skin">
-        <div class="container-full">
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
+    <div class="nk-content nk-content-fluid">
+        <div class="container-xl wide-lg">
+            <div class="nk-content-body">
+                <div class="buysell wide-xs m-auto">
 
-                    <div class="col-lg-8 offset-lg-2">
+                    <div class="buysell-title text-center">
+                        <h2 class="title">Fund Account</h2>
+                    </div><!-- .buysell-title -->
+                    <div class="buysell-block">
+                        <form action="{{ route('user.depositMethod') }}" method="GET" class="buysell-form">
+                            @csrf
 
-                        <div class="box box-body p-20 ">
-                            <h4 class="text-center">Select Deposit Method</h4>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12 col-lg-4 ">
-                                  <div style="border: 1px solid white; margin: 10px; padding: 10px" class="box box-body bg-hexagons-white pull-up">
-                                        <div class="media align-items-center p-0">
-                                            <div class="text-center">
-                                                <a href="{{ route('user.cryptoDeposit') }}"><i style="font-size: 20px" class="fa fa-coins" ></i></a>
-                                            </div>
-                                            <a href="{{ route('user.cryptoDeposit') }}">
-                                                <div>
-                                                    <h3 class="no-margin text-bold">Crypto Deposit</h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="flexbox align-items-center mt-25">
-                                            <div>
-                                                <p class="no-margin fw-600"><span class="text-primary">$10</span> - $Unlimited</p>
-                                                <p class="no-margin text-warning">Instant Deposit</p>
-                                            </div>
+                            <div class="buysell-field form-group">
+                                <div class="form-label-group">
+                                    <label class="form-label" for="buysell-amount">Amount to Deposit</label>
+                                </div>
+                                <div class="form-control-group">
+                                    <input type="number"  class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="1000">
+                                    <div class="form-dropdown">
+                                        <div class="text text-primary">
+                                            {{ auth()->user()->currency }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-4">
-                                    <div class="box box-body bg-hexagons-white pull-up">
-                                        <div class="media align-items-center p-0">
-                                            <div class="text-center">
-                                                <a href="#"><i class="cc XRP me-5" title="XRP"></i></a>
-                                            </div>
-                                            <div>
-                                                <h3 class="no-margin text-bold">Ripple</h3>
-                                                <span>Real Estate</span>
-                                            </div>
-                                        </div>
-                                        <div class="flexbox align-items-center mt-25">
-                                            <div>
-                                                <p class="no-margin fw-600"><span class="text-primary">$25.000</span> / $30.000</p>
-                                                <p class="no-margin">Sponsored</p>
-                                            </div>
-                                            <div class="text-end">
-                                                <p class="no-margin fw-600"><span class="text-primary">84%</span></p>
-                                                <p class="no-margin">9d left</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="form-note-group">
+                                    <span class="buysell-min form-note-alt">Minimum: 50 {{ auth()->user()->currency }}</span>
                                 </div>
-
-                            </div>
-
-
-
-                            <!-- TradingView Widget END -->
-                        </div>
-                    </div>
-                </div>
-
-
-            </section>
-            <!-- /.content -->
+                            </div><!-- .buysell-field -->
+                            <div class="buysell-field form-group">
+                                <div class="form-label-group">
+                                    <label class="form-label">Payment Method</label>
+                                </div>
+                                <div class="form-pm-group">
+                                    <ul class="buysell-pm-list">
+                                        <li class="buysell-pm-item">
+                                            <input class="buysell-pm-control" type="radio" name="deposit_method" value="crypto" id="pm-paypal">
+                                            <label class="buysell-pm-label" for="pm-paypal">
+                                                <span class="pm-name">Crypto Deposit</span>
+                                                <span class="pm-icon"><em class="icon ni ni-coins"></em></span>
+                                            </label>
+                                        </li>
+                                        <li class="buysell-pm-item">
+                                            <input class="buysell-pm-control" type="radio" name="deposit_method" value="bank" id="pm-bank">
+                                            <label class="buysell-pm-label" for="pm-bank">
+                                                <span class="pm-name">Bank Transfer</span>
+                                                <span class="pm-icon"><em class="icon ni ni-building-fill"></em></span>
+                                            </label>
+                                        </li>
+                                        <li class="buysell-pm-item">
+                                            <input class="buysell-pm-control" type="radio" name="deposit_method" value="card" id="pm-card">
+                                            <label class="buysell-pm-label" for="pm-card">
+                                                <span class="pm-name">Credit / Debit Card</span>
+                                                <span class="pm-icon"><em class="icon ni ni-cc-alt-fill"></em></span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- .buysell-field -->
+                            <div class="buysell-field form-action">
+                                <button type="submit" class="btn btn-lg btn-block btn-primary">Continue</button>
+                            </div><!-- .buysell-field -->
+                        </form><!-- .buysell-form -->
+                    </div><!-- .buysell-block -->
+                </div><!-- .buysell -->
+            </div>
         </div>
     </div>
 

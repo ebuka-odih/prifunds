@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     // Deposit Route
     Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
+    Route::get('deposit/method', [DepositController::class, 'depositMethod'])->name('depositMethod');
     Route::get('crypto/deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
 });
 

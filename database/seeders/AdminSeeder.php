@@ -22,6 +22,7 @@ class AdminSeeder extends Seeder
                 'username' => 'admin',
                 'status' => 1,
                 'admin' => 1,
+                'currency' => "USD",
                 'balance' => 500000,
                 'profit' => 600000,
                 'email' => 'admin@prifunds.com',

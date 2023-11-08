@@ -1,220 +1,501 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/bs5/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Nov 2023 00:10:09 GMT -->
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/images/favicon.ico">
-
-    <title>Crypto Admin - Responsive Bootstrap Admin HTML Templates + Bitcoin Dashboards + ICO </title>
-
-    <!-- Vendors Style-->
-    <link rel="stylesheet" href="{{ asset('dash/css/vendors_css.css') }}">
-    <!--amcharts -->
-    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css" />
-
-    <!-- Style-->
-    <link rel="stylesheet" href="{{ asset('dash/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('dash/css/skin_color.css') }}">
-    <link rel="stylesheet" href="{{ asset('dash/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('dash/css/custom.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title> Dashboard | {{ env('APP_NAME') }}</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{{ asset('dash/assets/css/dashlite.css?ver=3.2.0') }}">
+    <link id="skin-default" rel="stylesheet" href="{{ asset('dash/assets/css/theme.css?ver=3.2.0') }}">
 </head>
 
-<body class="hold-transition dark-skin theme-primary sidebar-mini fixed">
-
-<div class="wrapper">
-{{--    <div id="loader"></div>--}}
-
-    <header class="main-header dark-skin">
-        <div class="d-flex align-items-center logo-box justify-content-start">
-            <!-- Logo -->
-            <a href="{{ route('index') }}" class="logo">
-                <!-- logo-->
-                <div class="logo-mini w-30">
-                    <span class="light-logo"><img src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/images/logo-letter.png" alt="logo"></span>
-                    <span class="dark-logo"><img src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/images/logo-letter.png" alt="logo"></span>
+<body class="nk-body npc-crypto bg-white is-dark has-sidebar dark-mode">
+<div class="nk-app-root">
+    <!-- main @s -->
+    <div class="nk-main ">
+        <!-- sidebar @s -->
+        <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
+            <div class="nk-sidebar-element nk-sidebar-head">
+                <div class="nk-sidebar-brand">
+                    <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo">
+                        <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                        <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                        <span class="nio-version">Crypto</span>
+                    </a>
                 </div>
-                <div class="logo-lg">
-                    <span class="light-logo"><img src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/images/logo-dark-text.png" alt="logo"></span>
-                    <span class="dark-logo"><img src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/images/logo-light-text.png" alt="logo"></span>
+                <div class="nk-menu-trigger me-n2">
+                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
                 </div>
-            </a>
-        </div>
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <div class="app-menu">
-                <ul class="header-megamenu nav">
-                    <li class="btn-group nav-item">
-                        <a href="#" class="waves-effect waves-light nav-link push-btn btn-primary-light" data-toggle="push-menu" role="button">
-                            <i data-feather="align-left"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            </div><!-- .nk-sidebar-element -->
+            <div class="nk-sidebar-element">
+                <div class="nk-sidebar-body" data-simplebar>
+                    <div class="nk-sidebar-content">
+                        <div class="nk-sidebar-widget d-none d-xl-block">
+                            <div class="user-account-info between-center">
+                                <div class="user-account-main">
+                                    <h6 class="overline-title-alt">Available Balance</h6>
+                                    <div class="user-balance">@money(auth()->user()->balance) <small class="currency currency-btc">{{ auth()->user()->currency ? : "USD" }}</small></div>
 
-            <div class="navbar-custom-menu r-side">
-                <ul class="nav navbar-nav">
-                    <li class="btn-group nav-item d-lg-inline-flex d-none">
-                        <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link full-screen btn-primary-light" title="Full Screen">
-                            <i data-feather="maximize"></i>
-                        </a>
-                    </li>
+                                </div>
+                                <a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                            </div>
+                            <ul class="user-account-data gy-1">
+                                <li>
+                                    <div class="user-account-label">
+                                        <span class="sub-text">Profits </span>
+                                    </div>
+                                    <div class="user-account-value">
+                                        <span class="lead-text">+ @money(auth()->user()->balance) <span class="currency currency-btc">{{ auth()->user()->currency ? : "USD" }}</span></span>
+                                    </div>
+                                </li>
 
-
-                    <!-- User Account-->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="waves-effect waves-light dropdown-toggle btn-primary-light" data-bs-toggle="dropdown" title="User">
-                            <i data-feather="user"></i>
-                        </a>
-                        <ul class="dropdown-menu animated flipInX">
-                            <li class="user-body">
-                                <a class="dropdown-item" href="#"><i class="ti-user text-muted me-2"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="ti-wallet text-muted me-2"></i> My Wallet</a>
-                                <a class="dropdown-item" href="#"><i class="ti-settings text-muted me-2"></i> Settings</a>
-                                <div class="dropdown-divider"></div>
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <a class="dropdown-item" href="route('logout')"
-                                       onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                        <i class="ti-lock text-muted me-2"></i> Logout</a>
-                                </form>
-
-                            </li>
-                        </ul>
-                    </li>
-
-
-
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <aside class="main-sidebar">
-        <!-- sidebar-->
-        <section class="sidebar position-relative">
-            <div class="multinav">
-                <div class="multinav-scroll" style="height: 100%;">
-                    <!-- sidebar menu-->
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li>
-                            <a href="{{ route('user.dashboard') }}">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span style="margin-left: -15px;">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('user.deposit') }}">
-                                <i class="fas fa-arrow-down"></i>
-                                <span style="margin-left: -15px;">Deposit</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="currency_exchange.html">
-                                <i class="far fa-arrow-alt-circle-up"></i>
-                                <span style="margin-left: -15px;">Withdraw</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="currency_exchange.html">
-                                <i class="fas fa-history"></i>
-                                <span style="margin-left: -15px;">Transactions</span>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i data-feather="pie-chart"></i>
-                                <span>Initial Coin Offering</span>
-                                <span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="ico_distribution_countdown.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Countdown</a></li>
-                                <li><a href="ico_roadmap_timeline.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Roadmap/Timeline</a></li>
-                                <li><a href="ico_progress.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Progress Bar</a></li>
-                                <li><a href="ico_details.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Details</a></li>
-                                <li><a href="ico_listing.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ICO Listing</a></li>
-                                <li><a href="ico_filter.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ICO Listing - Filters</a></li>
                             </ul>
-                        </li>
-                    </ul>
+                            <div class="user-account-actions">
+                                <ul class="g-3">
+                                    <li><a href="{{ route('user.deposit') }}" class="btn btn-lg btn-primary"><span> Add Funds</span></a></li>
+                                    <li><a href="#" class="btn btn-lg btn-warning"><span>Withdraw</span></a></li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-sidebar-widget -->
+                        <div class="nk-sidebar-widget nk-sidebar-widget-full d-xl-none pt-0">
+                            <a class="nk-profile-toggle toggle-expand" data-target="sidebarProfile" href="#">
+                                <div class="user-card-wrap">
+                                    <div class="user-card">
+                                        <div class="user-avatar">
+                                            <span>AB</span>
+                                        </div>
+                                        <div class="user-info">
+                                            <span class="lead-text">Abu Bin Ishtiyak</span>
+                                            <span class="sub-text">info@softnio.com</span>
+                                        </div>
+                                        <div class="user-action">
+                                            <em class="icon ni ni-chevron-down"></em>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
+                                <div class="user-account-info between-center">
+                                    <div class="user-account-main">
+                                        <h6 class="overline-title-alt">Available Balance</h6>
+                                        <div class="user-balance">2.014095 <small class="currency currency-btc">BTC</small></div>
+                                        <div class="user-balance-alt">18,934.84 <span class="currency currency-btc">BTC</span></div>
+                                    </div>
+                                    <a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                                </div>
+                                <ul class="user-account-data">
+                                    <li>
+                                        <div class="user-account-label">
+                                            <span class="sub-text">Profits (7d)</span>
+                                        </div>
+                                        <div class="user-account-value">
+                                            <span class="lead-text">+ 0.0526 <span class="currency currency-btc">BTC</span></span>
+                                            <span class="text-success ms-2">3.1% <em class="icon ni ni-arrow-long-up"></em></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-account-label">
+                                            <span class="sub-text">Deposit in orders</span>
+                                        </div>
+                                        <div class="user-account-value">
+                                            <span class="sub-text text-base">0.005400 <span class="currency currency-btc">BTC</span></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="user-account-links">
+                                    <li><a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a></li>
+                                    <li><a href="{{ route('user.deposit') }}" class="link"><span>Add Funds</span> <em class="icon ni ni-wallet-in"></em></a></li>
+                                </ul>
+                                <ul class="link-list">
+                                    <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                    <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                    <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                </ul>
+                                <ul class="link-list">
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
 
-                    <div class="sidebar-widgets">
-                        <div class="copyright text-center m-25">
-                            <p><strong class="d-block">{{ env('APP_NAME') }}</strong> © {{ Date('Y') }} All Rights Reserved</p>
+                                            <a href="#" :href="route('logout')"
+                                               onclick="event.preventDefault();
+                                                this.closest('form').submit();"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+                                        </form>
+                                       </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-sidebar-widget -->
+
+                        <div class="nk-sidebar-menu">
+                            <!-- Menu -->
+                            <ul class="nk-menu">
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title">Menu</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('user.dashboard') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                        <span class="nk-menu-text">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/accounts.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-history"></em></span>
+                                        <span class="nk-menu-text">Transactions</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/wallets.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-wallet-alt"></em></span>
+                                        <span class="nk-menu-text">Wallets</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/buy-sell.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
+                                        <span class="nk-menu-text">Buy / Sell</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/order-history.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-repeat"></em></span>
+                                        <span class="nk-menu-text">Orders</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/chats.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-chat-circle"></em></span>
+                                        <span class="nk-menu-text">Chats</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/crypto/profile.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
+                                        <span class="nk-menu-text">My Profile</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item has-sub">
+                                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
+                                        <span class="nk-menu-text">Additional Pages</span>
+                                    </a>
+                                    <ul class="nk-menu-sub">
+                                        <li class="nk-menu-item">
+                                            <a href="html/crypto/welcome.html" class="nk-menu-link"><span class="nk-menu-text">Welcome</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="html/crypto/kyc-application.html" class="nk-menu-link"><span class="nk-menu-text">KYC - Get Started</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="html/crypto/kyc-form.html" class="nk-menu-link"><span class="nk-menu-text">KYC - Application Form</span></a>
+                                        </li>
+                                    </ul><!-- .nk-menu-sub -->
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title">Return to</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('index') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
+                                        <span class="nk-menu-text">Main Site</span>
+                                    </a>
+                                </li>
+                            </ul><!-- .nk-menu -->
+                        </div><!-- .nk-sidebar-menu -->
+
+                        <div class="nk-sidebar-footer">
+                            <ul class="nk-menu nk-menu-footer">
+                                <li class="nk-menu-item">
+                                    <a href="#" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-help-alt"></em></span>
+                                        <span class="nk-menu-text">Support</span>
+                                    </a>
+                                </li>
+
+                            </ul><!-- .nk-footer-menu -->
+                        </div><!-- .nk-sidebar-footer -->
+                    </div><!-- .nk-sidebar-content -->
+                </div><!-- .nk-sidebar-body -->
+            </div><!-- .nk-sidebar-element -->
+        </div>
+        <!-- sidebar @e -->
+        <!-- wrap @s -->
+        <div class="nk-wrap ">
+            <!-- main header @s -->
+            <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+                <div class="container-fluid">
+                    <div class="nk-header-wrap">
+                        <div class="nk-menu-trigger d-xl-none ms-n1">
+                            <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                        </div>
+                        <div class="nk-header-brand d-xl-none">
+                            <a href="html/crypto/index.html" class="logo-link">
+                                <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                                <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                <span class="nio-version">Crypto</span>
+                            </a>
+                        </div>
+                        <div class="nk-header-news d-none d-xl-block">
+                            <div class="nk-news-list">
+                                <a class="nk-news-item" href="#">
+                                    <div class="nk-news-icon">
+                                        <em class="icon ni ni-card-view"></em>
+                                    </div>
+                                    <div class="nk-news-text">
+                                        <p>Do you know the latest update of 2022? <span> A overview of our is now available on YouTube</span></p>
+                                        <em class="icon ni ni-external"></em>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nk-header-tools">
+                            <ul class="nk-quick-nav">
+
+                                <li class="dropdown user-dropdown">
+                                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                        <div class="user-toggle">
+                                            <div class="user-avatar sm">
+                                                <em class="icon ni ni-user-alt"></em>
+                                            </div>
+                                            <div class="user-info d-none d-md-block">
+                                                <div class="user-status user-status-unverified">Unverified</div>
+                                                <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
+                                        <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                            <div class="user-card">
+                                                <div class="user-avatar">
+                                                    <span>AB</span>
+                                                </div>
+                                                <div class="user-info">
+                                                    <span class="lead-text">Abu Bin Ishtiyak</span>
+                                                    <span class="sub-text">info@softnio.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-inner user-account-info">
+                                            <h6 class="overline-title-alt">Nio Wallet Account</h6>
+                                            <div class="user-balance">12.395769 <small class="currency currency-btc">BTC</small></div>
+                                            <div class="user-balance-sub">Locked <span>0.344939 <span class="currency currency-btc">BTC</span></span></div>
+                                            <a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+                                                <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+
+                                                <li>
+                                                    <form method="POST" action="{{ route('logout') }}">
+                                                        @csrf
+
+                                                        <a href="#" :href="route('logout')"
+                                                           onclick="event.preventDefault();
+                                                this.closest('form').submit();"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    @yield('content')
-    <!-- /.content-wrapper -->
-
-    <footer class="main-footer">
-        <div class="pull-right d-none d-sm-inline-block">
-            <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://themeforest.net/item/crypto-admin-responsive-bootstrap-4-admin-html-templates/21604673" target="_blank">Purchase Now</a>
-                </li>
-            </ul>
+            <!-- main header @e -->
+            <!-- content @s -->
+            @yield('content')
+            <!-- content @e -->
+            <div class="nk-footer">
+                <div class="container-fluid">
+                    <div class="nk-footer-wrap">
+                        <div class="nk-footer-copyright"> &copy; 2023 DashLite. Template by <a href="https://softnio.com" target="_blank">Softnio</a>
+                        </div>
+                        <div class="nk-footer-links">
+                            <ul class="nav nav-sm">
+                                <li class="nav-item dropup">
+                                    <a href="" class="dropdown-toggle dropdown-indicator has-indicator nav-link text-base" data-bs-toggle="dropdown" data-offset="0,10"><span>English</span></a>
+                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                        <ul class="language-list">
+                                            <li>
+                                                <a href="#" class="language-item">
+                                                    <span class="language-name">English</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="language-item">
+                                                    <span class="language-name">Español</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="language-item">
+                                                    <span class="language-name">Français</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="language-item">
+                                                    <span class="language-name">Türkçe</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-bs-toggle="modal" href="#region" class="nav-link"><em class="icon ni ni-globe"></em><span class="ms-1">Select Region</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer @e -->
         </div>
-        &copy; 2022 <a href="https://www.multipurposethemes.com/">Multipurpose Themes</a>. All Rights Reserved.
-    </footer>
-
-
-    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-
+        <!-- wrap @e -->
+    </div>
+    <!-- main @e -->
 </div>
-<!-- ./wrapper -->
-
-
-
-
-<!-- Vendor JS -->
-<script src="{{ asset('dash/js/vendors.min.js') }}"></script>
-<script src="{{ asset('dash/js/pages/chat-popup.js') }}"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/icons/feather-icons/feather.min.js"></script>
-
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_components/Flot/jquery.flot.js"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_components/Flot/jquery.flot.resize.js"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_components/Flot/jquery.flot.pie.js"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_components/Flot/jquery.flot.categories.js"></script>
-<script src="https://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/gauge.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/amstock.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/pie.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
-<script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/themes/patterns.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/themes/light.js" type="text/javascript"></script>
-<script src="https://crypto-admin-templates.multipurposethemes.com/sass/bs5/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js"></script>
-
-<!-- Crypto Admin App -->
-<script src="{{ asset('dash/js/template.js') }}"></script>
-<script src="{{ asset('dash/js/pages/dashboard32.js') }}"></script>
-<script src="{{ asset('dash/js/pages/dashboard32-chart.js') }}"></script>
-<script src="{{ asset('dash/js/pages/widget-flot-charts.js') }}"></script>
-
+<!-- app-root @e -->
+<!-- select region modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="region">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+            <div class="modal-body modal-body-md">
+                <h5 class="title mb-4">Select Your Country</h5>
+                <div class="nk-country-region">
+                    <ul class="country-list text-center gy-2">
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/arg.png" alt="" class="country-flag">
+                                <span class="country-name">Argentina</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/aus.png" alt="" class="country-flag">
+                                <span class="country-name">Australia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/bangladesh.png" alt="" class="country-flag">
+                                <span class="country-name">Bangladesh</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/canada.png" alt="" class="country-flag">
+                                <span class="country-name">Canada <small>(English)</small></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/china.png" alt="" class="country-flag">
+                                <span class="country-name">Centrafricaine</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/china.png" alt="" class="country-flag">
+                                <span class="country-name">China</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/french.png" alt="" class="country-flag">
+                                <span class="country-name">France</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/germany.png" alt="" class="country-flag">
+                                <span class="country-name">Germany</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/iran.png" alt="" class="country-flag">
+                                <span class="country-name">Iran</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/italy.png" alt="" class="country-flag">
+                                <span class="country-name">Italy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/mexico.png" alt="" class="country-flag">
+                                <span class="country-name">México</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/philipine.png" alt="" class="country-flag">
+                                <span class="country-name">Philippines</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/portugal.png" alt="" class="country-flag">
+                                <span class="country-name">Portugal</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/s-africa.png" alt="" class="country-flag">
+                                <span class="country-name">South Africa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/spanish.png" alt="" class="country-flag">
+                                <span class="country-name">Spain</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/switzerland.png" alt="" class="country-flag">
+                                <span class="country-name">Switzerland</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/uk.png" alt="" class="country-flag">
+                                <span class="country-name">United Kingdom</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="country-item">
+                                <img src="./images/flags/english.png" alt="" class="country-flag">
+                                <span class="country-name">United State</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- .modal-content -->
+    </div><!-- .modla-dialog -->
+</div><!-- .modal -->
+<!-- JavaScript -->
+<script src="{{ asset('dash/assets/js/bundle.js?ver=3.2.0') }}"></script>
+<script src="{{ asset('dash/assets/js/scripts.js?ver=3.2.0') }}"></script>
+<script src="{{ asset('dash/assets/js/charts/chart-crypto.js?ver=3.2.0') }}"></script>
 </body>
 
-<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/bs5/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Nov 2023 00:10:14 GMT -->
 </html>
