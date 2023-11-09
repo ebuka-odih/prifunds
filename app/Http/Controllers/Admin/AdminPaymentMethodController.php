@@ -10,7 +10,7 @@ class AdminPaymentMethodController extends Controller
 {
     public function index()
     {
-        return view('admin.wallets');
+
     }
 
     public function create()

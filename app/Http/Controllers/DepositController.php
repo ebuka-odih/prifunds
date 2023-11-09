@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
+use ProtoneMedia\Splade\Facades\Splade;
 
 class DepositController extends Controller
 {
@@ -17,16 +18,30 @@ class DepositController extends Controller
         if ($request->deposit_method == 'crypto'){
             $wallets = PaymentMethod::all();
             return view('dashboard.deposit.crypto', compact('amount', 'wallets'));
+
         }elseif ($request->deposit_method == 'card'){
             return view('dashboard.deposit.card', compact('amount'));
         }
         return view('dashboard.deposit.deposit');
     }
 
+    public function fetchWalletAddress($paymentMethodId) {
+        $paymentMethod = PaymentMethod::find($paymentMethodId);
+
+        if ($paymentMethod) {
+            return response()->json(['value' => $paymentMethod->value]);
+        } else {
+            return response()->json(['error' => 'Payment Method not found'], 404);
+        }
+    }
+
     public function cryptoDeposit()
     {
 
-       return view('dashboard.deposit.crypto', compact('wallets'));
+        view('news', [
+            // This will only be evaluated when lazy loading...
+            'wallets' => Splade::onLazy(fn () => PaymentMethod::all()),
+        ]);
     }
 
     public function cardDeposit()

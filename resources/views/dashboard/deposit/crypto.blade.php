@@ -1,53 +1,78 @@
 @extends('dashboard.layout.app')
 @section('content')
 
-    <div class="content-wrapper light-skin">
-        <div class="container-full">
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-
-                    <div class="col-lg-6 offset-lg-2">
-
-                        <div class="box box-body p-20 ">
-                            <h4 class="text-center">Crypto Deposit</h4>
-                            <hr>
-                            <div class="row">
-                                <form action="">
-                                    <div class="offset-lg-2">
-                                        <div class="col-lg-8">
-                                            <label for="">Select Wallet</label>
-                                            <select name="payment_method_id" class="form-control" id="">
-                                                @foreach($wallets as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-                                        <div class="col-lg-8 mt-3">
-                                            <label for="">Amount</label>
-                                            <input type="number" class="form-control" name="amount">
-                                        </div>
-
-                                        <div class="col-lg-6 mt-3">
-                                            <button class="btn btn-primary" type="submit">Process Payment</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
+    <div class="nk-content nk-content-fluid">
+        <div class="container-xl wide-lg">
+            <div class="nk-content-body">
+                <div class="buysell wide-xs m-auto">
 
 
+                    <div class="buysell-title text-center">
+                        <h2 class="title mb-3">Crypto Deposit</h2>
+                    </div><!-- .buysell-title -->
+                    <hr>
+                    <h5 class="mt-3 mb-3 text-center text-warning">Amount to Send @money($amount) {{ auth()->user()->currency }}</h5>
+                    <div class="buysell-block" >
 
-                            <!-- TradingView Widget END -->
-                        </div>
-                    </div>
-                </div>
+                        <livewire:wallet />
 
 
-            </section>
-            <!-- /.content -->
+                    </div><!-- .buysell-block -->
+                </div><!-- .buysell -->
+            </div>
         </div>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <script src="{{ asset('js/qrcode.js') }}"></script>
+    <script src="{{ asset('js/qrcode.min.js') }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paymentMethodSelect = document.getElementById("paymentMethodSelect");
+            const selectedWalletAddress = document.getElementById("selectedWalletAddress");
+
+            paymentMethodSelect.addEventListener("change", function() {
+                const selectedOption = paymentMethodSelect.options[paymentMethodSelect.selectedIndex];
+                const paymentMethodId = selectedOption.value;
+
+                // Make an AJAX request to fetch the wallet address
+                fetch(`/fetch-wallet-address/${paymentMethodId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        selectedWalletAddress.textContent = data.value;
+                    })
+                    .catch(error => {
+                        console.error("Error fetching wallet address:", error);
+                        selectedWalletAddress.textContent = "Error fetching wallet address";
+                    });
+            });
+        });
+    </script>
+
+{{--    <script>--}}
+{{--        $(document).ready(function () {--}}
+{{--            $('#payment-method-select').on('change', function () {--}}
+{{--                var selectedName = $(this).val();--}}
+{{--                if (selectedName) {--}}
+{{--                    // Send an AJAX request to fetch the value--}}
+{{--                    $.ajax({--}}
+{{--                        type: 'GET',--}}
+{{--                        url: 'fetch-payment-value', // Define the route in your Laravel routes file--}}
+{{--                        data: {--}}
+{{--                            name: selectedName,--}}
+{{--                        },--}}
+{{--                        success: function (response) {--}}
+{{--                            $('#payment-method-value').html(response);--}}
+{{--                        },--}}
+{{--                    });--}}
+{{--                } else {--}}
+{{--                    $('#payment-method-value').html('');--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 @endsection

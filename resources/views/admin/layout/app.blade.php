@@ -88,7 +88,7 @@
                     </li>
                     <li class="nav-main-heading">Transaction</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                        <a class="nav-main-link" href="{{ route('admin.deposits') }}">
                             <i class="nav-main-link-icon fa fa-arrow-down"></i>
                             <span class="nav-main-link-name">Deposits</span>
                         </a>
@@ -102,12 +102,12 @@
 
                     <li class="nav-main-heading">Extend</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                        <a class="nav-main-link" href="{{ route('admin.users') }}">
                             <i class="nav-main-link-icon fa fa-users"></i>
                             <span class="nav-main-link-name">Users</span>
                         </a>
                     </li><li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                        <a class="nav-main-link" href="{{ route('admin.wallet.create') }}">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Add Wallet</span>
                         </a>
@@ -200,111 +200,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                            <i class="nav-main-link-icon fa fa-cog"></i>
-                            <span class="nav-main-link-name">Main Menu</span>
-                        </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <i class="nav-main-link-icon fa fa-inbox"></i>
-                                    <span class="nav-main-link-name">1.1 Item</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <i class="nav-main-link-icon fa fa-fire"></i>
-                                    <span class="nav-main-link-name">1.2 Item</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <i class="nav-main-link-icon fa fa-share-alt"></i>
-                                    <span class="nav-main-link-name">1.3 Item</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                    <span class="nav-main-link-name">Sub Level 2</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-primary">3</span>
-                                </a>
-                                <ul class="nav-main-submenu">
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link" href="#">
-                                            <i class="nav-main-link-icon fa fa-tag"></i>
-                                            <span class="nav-main-link-name">2.1 Item</span>
-                                            <span class="nav-main-link-badge badge rounded-pill bg-info">2</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link" href="#">
-                                            <i class="nav-main-link-icon fa fa-chart-pie"></i>
-                                            <span class="nav-main-link-name">2.2 Item</span>
-                                            <span class="nav-main-link-badge badge rounded-pill bg-danger">2</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link" href="#">
-                                            <i class="nav-main-link-icon fa fa-sticky-note"></i>
-                                            <span class="nav-main-link-name">2.3 Item</span>
-                                            <span class="nav-main-link-badge badge rounded-pill bg-warning">3</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                            <span class="nav-main-link-name">Sub Level 3</span>
-                                        </a>
-                                        <ul class="nav-main-submenu">
-                                            <li class="nav-main-item">
-                                                <a class="nav-main-link" href="#">
-                                                    <i class="nav-main-link-icon fa fa-map"></i>
-                                                    <span class="nav-main-link-name">3.1 Item</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-main-item">
-                                                <a class="nav-main-link" href="#">
-                                                    <i class="nav-main-link-icon fa fa-coffee"></i>
-                                                    <span class="nav-main-link-name">3.2 Item</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-main-item">
-                                                <a class="nav-main-link" href="#">
-                                                    <i class="nav-main-link-icon fa fa-user-astronaut"></i>
-                                                    <span class="nav-main-link-name">3.3 Item</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-main-item">
-                                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                                                    <span class="nav-main-link-name">Sub Level 4</span>
-                                                </a>
-                                                <ul class="nav-main-submenu">
-                                                    <li class="nav-main-item">
-                                                        <a class="nav-main-link" href="#">
-                                                            <i class="nav-main-link-icon fa fa-heart"></i>
-                                                            <span class="nav-main-link-name">4.1 Item</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-main-item">
-                                                        <a class="nav-main-link" href="#">
-                                                            <i class="nav-main-link-icon fa fa-search"></i>
-                                                            <span class="nav-main-link-name">4.2 Item</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-main-item">
-                                                        <a class="nav-main-link" href="#">
-                                                            <i class="nav-main-link-icon fa fa-microphone"></i>
-                                                            <span class="nav-main-link-name">4.3 Item</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
 
                 </ul>
             </div>
