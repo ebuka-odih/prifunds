@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->bigInteger('user_id');
             $table->string('symbol');
-            $table->string('trade_action');
+            $table->string('trade_action')->nullable();
             $table->string('type');
             $table->double('amount');
             $table->string('sl')->nullable();

@@ -3,19 +3,14 @@
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TradeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
+use Livewire\Livewire;
+
+
 
 Route::view('/', 'welcome')->name('index');
 
@@ -32,9 +27,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     // Deposit Route
     Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
     Route::get('deposit/method', [DepositController::class, 'depositMethod'])->name('depositMethod');
-    Route::get('/fetch-wallet-address/{paymentMethodId}', [DepositController::class, 'fetchWalletAddress']);
+    Route::post('crypto-deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
 
-    Route::get('crypto/deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
+    Route::get('trade-room', [TradeController::class, 'trade'])->name('trade');
+    Route::post('place/trade-room', [TradeController::class, 'placeTrade'])->name('placeTrade');
+    Route::get('close/trade/history', [TradeController::class, 'closeTrades'])->name('closeTrades');
+
+
 });
 
 
