@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "abraham-flutterwave/laravel-payment": "^1.0",
         "blade-ui-kit/blade-heroicons": "^2.1",
         "blade-ui-kit/blade-icons": "^1.5",
         "codeat3/blade-google-material-design-icons": "^1.18",

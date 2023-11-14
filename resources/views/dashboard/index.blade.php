@@ -203,125 +203,32 @@
                 </div><!-- .nk-block -->
                 <div class="nk-block nk-block-lg">
                     <div class="row gy-gs">
-                        <div class="col-md-6">
-                            <div class="card-head">
-                                <div class="card-title  mb-0">
-                                    <h5 class="title">Recent Activities</h5>
-                                </div>
-                                <div class="card-tools">
-                                    <ul class="card-tools-nav">
-                                        <li><a href="#">Buy</a></li>
-                                        <li><a href="#">Sell</a></li>
-                                        <li class="active"><a href="#">All</a></li>
-                                    </ul>
-                                </div>
-                            </div><!-- .card-head -->
-                            <div class="tranx-list card card-bordered">
-                                <div class="tranx-item">
-                                    <div class="tranx-col">
-                                        <div class="tranx-info">
-                                            <div class="tranx-data">
-                                                <div class="tranx-label">Buy Bitcoin <em class="tranx-icon sm icon ni ni-sign-btc"></em></div>
-                                                <div class="tranx-date">Nov 12, 2019 11:34 PM</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tranx-col">
-                                        <div class="tranx-amount">
-                                            <div class="number">0.5384 <span class="currency currency-btc">BTC</span></div>
-                                            <div class="number-sm">3,980.93 <span class="currency currency-usd">USD</span></div>
-                                        </div>
-                                    </div>
-                                </div><!-- .tranx-item -->
-                                <div class="tranx-item">
-                                    <div class="tranx-col">
-                                        <div class="tranx-info">
-                                            <div class="tranx-data">
-                                                <div class="tranx-label">Buy Ehtereum <span class="tranx-icon sm"><img src="./images/coins/eth.svg" alt=""></span></div>
-                                                <div class="tranx-date">Nov 12, 2019 11:34 PM</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tranx-col">
-                                        <div class="tranx-amount">
-                                            <div class="number">1.538405 <span class="currency currency-btc">ETH</span></div>
-                                            <div class="number-sm">1,176.34 <span class="currency currency-usd">USD</span></div>
-                                        </div>
-                                    </div>
-                                </div><!-- .tranx-item -->
-                                <div class="tranx-item">
-                                    <div class="tranx-col">
-                                        <div class="tranx-info">
-                                            <div class="tranx-data">
-                                                <div class="tranx-label">Buy Bitcoin <em class="tranx-icon sm icon ni ni-sign-btc"></em></div>
-                                                <div class="tranx-date">Nov 12, 2019 11:34 PM</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tranx-col">
-                                        <div class="tranx-amount">
-                                            <div class="number">0.5384 <span class="currency currency-btc">BTC</span></div>
-                                            <div class="number-sm">3,980.93 <span class="currency currency-usd">USD</span></div>
-                                        </div>
-                                    </div>
-                                </div><!-- .tranx-item -->
-                                <div class="tranx-item">
-                                    <div class="tranx-col">
-                                        <div class="tranx-info">
-                                            <div class="tranx-data">
-                                                <div class="tranx-label">Buy Ehtereum <span class="tranx-icon sm"><img src="./images/coins/eth.svg" alt=""></span></div>
-                                                <div class="tranx-date">Nov 12, 2019 11:34 PM</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tranx-col">
-                                        <div class="tranx-amount">
-                                            <div class="number">1.538405 <span class="currency currency-btc">ETH</span></div>
-                                            <div class="number-sm">1,176.34 <span class="currency currency-usd">USD</span></div>
-                                        </div>
-                                    </div>
-                                </div><!-- .tranx-item -->
-                            </div><!-- .tranx-list -->
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="card-head">
-                                <div class="card-title mb-0">
-                                    <h5 class="title">Balance Flow</h5>
-                                </div>
-                                <div class="card-tools">
-                                    <ul class="card-tools-nav">
-                                        <li><a href="#">This Month</a></li>
-                                        <li class="active"><a href="#">This Years</a></li>
-                                    </ul>
-                                </div>
-                            </div><!-- .card-title -->
-                            <div class="card card-bordered">
-                                <div class="card-inner">
-                                    <div class="nk-wg4">
-                                        <div class="nk-wg4-group justify-center gy-3 gx-4">
-                                            <div class="nk-wg4-item">
-                                                <div class="sub-text">
-                                                    <div class="dot dot-lg sq" data-bg="#5ce0aa"></div> <span>Received</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-wg4-item">
-                                                <div class="sub-text">
-                                                    <div class="dot dot-lg sq" data-bg="#798bff"></div> <span>Send</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-wg4-item">
-                                                <div class="sub-text">
-                                                    <div class="dot dot-lg sq" data-bg="#f6ca3e"></div><span>Withdraw</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="nk-ck3">
-                                        <canvas class="chart-account-summary" id="summaryBalance"></canvas>
-                                    </div>
-                                </div><!-- .card-inner -->
-                            </div><!-- .card -->
-                        </div><!-- .col -->
+                       <div class="col-12">
+                           <!-- TradingView Widget BEGIN -->
+                           <div class="tradingview-widget-container">
+                               <div id="tradingview_f221c"></div>
+                               <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+                               <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                               <script type="text/javascript">
+                                   new TradingView.widget(
+                                       {
+                                           "width": "100%",
+                                           "height": "500",
+                                           "symbol": "FX:EURUSD",
+                                           "interval": "D",
+                                           "timezone": "Etc/UTC",
+                                           "theme": "dark",
+                                           "style": "1",
+                                           "locale": "en",
+                                           "enable_publishing": false,
+                                           "allow_symbol_change": true,
+                                           "container_id": "tradingview_f221c"
+                                       }
+                                   );
+                               </script>
+                           </div>
+                           <!-- TradingView Widget END -->
+                       </div>
                     </div><!-- .row -->
                 </div><!-- .nk-block -->
                 <div class="nk-block">
@@ -343,7 +250,7 @@
                                         <div class="form-icon">
                                             <em class="icon ni ni-link-alt"></em>
                                         </div>
-                                        <input type="text" class="form-control copy-text" id="refUrl" value="https://dashlite.net/?ref=4945KD48">
+                                        <input type="text" class="form-control copy-text" id="refUrl" value="{{ auth()->user()->referral_link }}">
                                     </div>
                                 </div>
                             </div><!-- .nk-refwg-invite -->
