@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 <head>
@@ -22,7 +21,7 @@
         <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
             <div class="nk-sidebar-element nk-sidebar-head">
                 <div class="nk-sidebar-brand">
-                    <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo">
+                    <a href="{{ route('index') }}" class="logo-link nk-sidebar-logo">
                         <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                         <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                         <span class="nio-version">Crypto</span>
@@ -70,8 +69,8 @@
                                             <span>AB</span>
                                         </div>
                                         <div class="user-info">
-                                            <span class="lead-text">Abu Bin Ishtiyak</span>
-                                            <span class="sub-text">info@softnio.com</span>
+                                            <span class="lead-text">{{ auth()->user()->name }}</span>
+                                            <span class="sub-text">{{ auth()->user()->email }}</span>
                                         </div>
                                         <div class="user-action">
                                             <em class="icon ni ni-chevron-down"></em>
@@ -83,38 +82,28 @@
                                 <div class="user-account-info between-center">
                                     <div class="user-account-main">
                                         <h6 class="overline-title-alt">Available Balance</h6>
-                                        <div class="user-balance">2.014095 <small class="currency currency-btc">BTC</small></div>
-                                        <div class="user-balance-alt">18,934.84 <span class="currency currency-btc">BTC</span></div>
+                                        <div class="user-balance">{{ auth()->user()->balance }} <small class="currency currency-btc">{{ auth()->user()->currency }}</small></div>
                                     </div>
                                     <a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                                 </div>
                                 <ul class="user-account-data">
                                     <li>
                                         <div class="user-account-label">
-                                            <span class="sub-text">Profits (7d)</span>
+                                            <span class="sub-text">Profits</span>
                                         </div>
                                         <div class="user-account-value">
-                                            <span class="lead-text">+ 0.0526 <span class="currency currency-btc">BTC</span></span>
-                                            <span class="text-success ms-2">3.1% <em class="icon ni ni-arrow-long-up"></em></span>
+                                            <span class="lead-text">+ {{ auth()->user()->profit }} <span class="currency currency-btc">{{ auth()->user()->currency }}</span></span>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="user-account-label">
-                                            <span class="sub-text">Deposit in orders</span>
-                                        </div>
-                                        <div class="user-account-value">
-                                            <span class="sub-text text-base">0.005400 <span class="currency currency-btc">BTC</span></span>
-                                        </div>
-                                    </li>
+
                                 </ul>
                                 <ul class="user-account-links">
-                                    <li><a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a></li>
+                                    <li><a href="{{ route('user.withdraw') }}" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a></li>
                                     <li><a href="{{ route('user.deposit') }}" class="link"><span>Add Funds</span> <em class="icon ni ni-wallet-in"></em></a></li>
                                 </ul>
                                 <ul class="link-list">
                                     <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
                                     <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                    <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                                 </ul>
                                 <ul class="link-list">
                                     <li>
@@ -174,7 +163,7 @@
                                         <span class="nk-menu-text">My Profile</span>
                                     </a>
                                 </li>
-                             
+
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title">Return to</h6>
                                 </li>
@@ -213,7 +202,7 @@
                             <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                         </div>
                         <div class="nk-header-brand d-xl-none">
-                            <a href="html/crypto/index.html" class="logo-link">
+                            <a href="{{ route('index') }}" class="logo-link">
                                 <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                                 <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                                 <span class="nio-version">Crypto</span>
@@ -242,8 +231,8 @@
                                                 <em class="icon ni ni-user-alt"></em>
                                             </div>
                                             <div class="user-info d-none d-md-block">
-                                                <div class="user-status user-status-unverified">Unverified</div>
-                                                <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                <div class="user-status user-status-unverified">{!! auth()->user()->status() !!}</div>
+                                                <div class="user-name dropdown-indicator">{{ auth()->user()->name }}</div>
                                             </div>
                                         </div>
                                     </a>
@@ -254,23 +243,20 @@
                                                     <span>AB</span>
                                                 </div>
                                                 <div class="user-info">
-                                                    <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                    <span class="sub-text">info@softnio.com</span>
+                                                    <span class="lead-text">{{ auth()->user()->name }}</span>
+                                                    <span class="sub-text">{{ auth()->user()->email }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="dropdown-inner user-account-info">
                                             <h6 class="overline-title-alt">Nio Wallet Account</h6>
                                             <div class="user-balance">12.395769 <small class="currency currency-btc">BTC</small></div>
-                                            <div class="user-balance-sub">Locked <span>0.344939 <span class="currency currency-btc">BTC</span></span></div>
-                                            <a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
+                                            <a href="{{ route('user.withdraw') }}" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
                                         </div>
                                         <div class="dropdown-inner">
                                             <ul class="link-list">
                                                 <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
                                                 <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                                <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                             </ul>
                                         </div>
                                         <div class="dropdown-inner">
@@ -302,42 +288,9 @@
             <div class="nk-footer">
                 <div class="container-fluid">
                     <div class="nk-footer-wrap">
-                        <div class="nk-footer-copyright"> &copy; 2023 DashLite. Template by <a href="https://softnio.com" target="_blank">Softnio</a>
+                        <div class="nk-footer-copyright"> &copy; {{ Date('Y') }} {{ env('APP_NAME') }}.
                         </div>
-                        <div class="nk-footer-links">
-                            <ul class="nav nav-sm">
-                                <li class="nav-item dropup">
-                                    <a href="" class="dropdown-toggle dropdown-indicator has-indicator nav-link text-base" data-bs-toggle="dropdown" data-offset="0,10"><span>English</span></a>
-                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                        <ul class="language-list">
-                                            <li>
-                                                <a href="#" class="language-item">
-                                                    <span class="language-name">English</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="language-item">
-                                                    <span class="language-name">Español</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="language-item">
-                                                    <span class="language-name">Français</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="language-item">
-                                                    <span class="language-name">Türkçe</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a data-bs-toggle="modal" href="#region" class="nav-link"><em class="icon ni ni-globe"></em><span class="ms-1">Select Region</span></a>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </div>

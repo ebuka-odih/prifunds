@@ -5,6 +5,7 @@ use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +34,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('place/trade-room', [TradeController::class, 'placeTrade'])->name('placeTrade');
     Route::get('close/trade/history', [TradeController::class, 'closeTrades'])->name('closeTrades');
 
+    Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
 
 });
 
