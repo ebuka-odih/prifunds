@@ -16,17 +16,9 @@
                         </div><!-- .nk-block-head-content -->
                         <div class="nk-block-head-content">
                             <ul class="nk-block-tools gx-3">
-                                <li><a href="#" class="btn btn-primary"><span>Deposit</span> <em class="icon ni ni-arrow-long-right"></em></a></li>
-                                <li><a href="#" class="btn btn-white btn-light"><span>Buy / Sell</span> <em class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a></li>
-                                <li class="opt-menu-md dropdown">
-                                    <a href="#" class="btn btn-white btn-light btn-icon" data-bs-toggle="dropdown"><em class="icon ni ni-setting"></em></a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <ul class="link-list-opt no-bdr">
-                                            <li><a href="#"><em class="icon ni ni-coin-alt"></em><span>Curreny Settings</span></a></li>
-                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                <li><a href="{{ route('user.deposit') }}" class="btn btn-primary"><span>Deposit</span> <em class="icon ni ni-arrow-long-right"></em></a></li>
+                                <li><a href="{{ route('user.trade') }}" class="btn btn-white btn-light"><span>Trade Forex</span> <em class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a></li>
+
                             </ul>
                         </div><!-- .nk-block-head-content -->
                     </div><!-- .nk-block-between -->
@@ -45,22 +37,16 @@
                                         <div class="card-inner">
                                             <div class="nk-wg7">
                                                 <div class="nk-wg7-stats">
-                                                    <div class="nk-wg7-title">Available balance in USD</div>
-                                                    <div class="number-lg amount">179,850.950</div>
+                                                    <div class="nk-wg7-title">Available balance in {{ $user->currency }}</div>
+                                                    <div class="number-lg amount">@money($user->balance)</div>
                                                 </div>
                                                 <div class="nk-wg7-stats-group">
                                                     <div class="nk-wg7-stats w-50">
-                                                        <div class="nk-wg7-title">Wallets</div>
-                                                        <div class="number-lg">5</div>
-                                                    </div>
-                                                    <div class="nk-wg7-stats w-50">
-                                                        <div class="nk-wg7-title">Transactions</div>
-                                                        <div class="number">34,405</div>
+                                                        <div class="nk-wg7-title">Profit</div>
+                                                        <div class="number">@money($user->profit) <span class="text-success">{{ $user->currency }}</span></div>
                                                     </div>
                                                 </div>
-                                                <div class="nk-wg7-foot">
-                                                    <span class="nk-wg7-note">Last activity at <span>19 Nov, 2019</span></span>
-                                                </div>
+
                                             </div><!-- .nk-wg7 -->
                                         </div><!-- .card-inner -->
                                     </div><!-- .card -->
@@ -72,7 +58,7 @@
                                 <div class="nk-block-head-xs">
                                     <div class="nk-block-between-md g-2">
                                         <div class="nk-block-head-content">
-                                            <h5 class="nk-block-title title">Digital Wallets</h5>
+                                            <h5 class="nk-block-title title">Account Summary</h5>
                                         </div>
                                         <div class="nk-block-head-content">
                                             <a href="html/crypto/wallets.html" class="link link-primary">See All</a>
@@ -83,12 +69,12 @@
                                     <div class="col-sm-4">
                                         <div class="card bg-light">
                                             <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
+                                                <a class="nk-wgw-inner" >
                                                     <div class="nk-wgw-name">
                                                         <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-btc"></em>
+                                                            <em class="icon ni ni-money"></em>
                                                         </div>
-                                                        <h5 class="nk-wgw-title title">NioWallet</h5>
+                                                        <h5 class="nk-wgw-title title">Traded Stock</h5>
                                                     </div>
                                                     <div class="nk-wgw-balance">
                                                         <div class="amount">4.434953<span class="currency currency-nio">NIO</span></div>
@@ -100,37 +86,21 @@
                                     <div class="col-sm-4">
                                         <div class="card bg-light">
                                             <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
+                                                <a class="nk-wgw-inner" >
                                                     <div class="nk-wgw-name">
                                                         <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-btc"></em>
+                                                            <em class="icon ni ni-money"></em>
                                                         </div>
-                                                        <h5 class="nk-wgw-title title">Bitcoin Wallet</h5>
+                                                        <h5 class="nk-wgw-title title">Total Deposit</h5>
                                                     </div>
                                                     <div class="nk-wgw-balance">
-                                                        <div class="amount">4.434953<span class="currency currency-btc">BTC</span></div>
+                                                        <div class="amount">@money($deposit)<span class="currency currency-btc">{{ $user->currency }}</span></div>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div><!-- .col -->
-                                    <div class="col-sm-4">
-                                        <div class="card bg-light">
-                                            <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
-                                                    <div class="nk-wgw-name">
-                                                        <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-eth"></em>
-                                                        </div>
-                                                        <h5 class="nk-wgw-title title">Ethereum Wallet</h5>
-                                                    </div>
-                                                    <div class="nk-wgw-balance">
-                                                        <div class="amount">0.000560<span class="currency currency-eth">ETH</span></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
+
                                 </div><!-- .row -->
                             </div><!-- .nk-block -->
                             <div class="nk-block nk-block-md">
@@ -234,14 +204,11 @@
                 <div class="nk-block">
                     <div class="card card-bordered">
                         <div class="nk-refwg">
-                            <div class="nk-refwg-invite card-inner">
+                            <div class="nk-refwg-invite card-inner col-12">
                                 <div class="nk-refwg-head g-3">
                                     <div class="nk-refwg-title">
                                         <h5 class="title">Refer Us & Earn</h5>
                                         <div class="title-sub">Use the bellow link to invite your friends.</div>
-                                    </div>
-                                    <div class="nk-refwg-action">
-                                        <a href="#" class="btn btn-primary">Invite</a>
                                     </div>
                                 </div>
                                 <div class="nk-refwg-url">
@@ -254,36 +221,7 @@
                                     </div>
                                 </div>
                             </div><!-- .nk-refwg-invite -->
-                            <div class="nk-refwg-stats card-inner bg-lighter">
-                                <div class="nk-refwg-group g-3">
-                                    <div class="nk-refwg-name">
-                                        <h6 class="title">My Referral <em class="icon ni ni-info" data-bs-toggle="tooltip" data-bs-placement="right" title="Referral Informations"></em></h6>
-                                    </div>
-                                    <div class="nk-refwg-info g-3">
-                                        <div class="nk-refwg-sub">
-                                            <div class="title">394</div>
-                                            <div class="sub-text">Total Joined</div>
-                                        </div>
-                                        <div class="nk-refwg-sub">
-                                            <div class="title">548.49</div>
-                                            <div class="sub-text">Referral Earn</div>
-                                        </div>
-                                    </div>
-                                    <div class="nk-refwg-more dropdown mt-n1 me-n1">
-                                        <a href="#" class="btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                        <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                            <ul class="link-list-plain sm">
-                                                <li><a href="#">7 days</a></li>
-                                                <li><a href="#">15 Days</a></li>
-                                                <li><a href="#">30 Days</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="nk-refwg-ck">
-                                    <canvas class="chart-refer-stats" id="refBarChart"></canvas>
-                                </div>
-                            </div><!-- .nk-refwg-stats -->
+
                         </div><!-- .nk-refwg -->
                     </div><!-- .card -->
                 </div><!-- .nk-block -->
@@ -317,7 +255,6 @@
                                 <div class="nk-block-content">
                                     <div class="nk-block-content-head px-lg-4">
                                         <h5>We’re here to help you!</h5>
-                                        <p class="text-soft">Ask a question or file a support ticket, manage request, report an issues. Our team support team will get back to you by email.</p>
                                     </div>
                                 </div>
                                 <div class="nk-block-content flex-shrink-0">

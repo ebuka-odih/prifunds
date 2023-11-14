@@ -150,51 +150,31 @@
                                 </li>
                                 <li class="nk-menu-item">
                                     <a href="{{ route('user.trade') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-chart-up"></em></span>
-                                        <span class="nk-menu-text">Forex</span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-coin-alt"></em></span>
+                                        <span class="nk-menu-text">Trade Forex</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
                                     <a href="html/crypto/buy-sell.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
-                                        <span class="nk-menu-text">Buy / Sell</span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-chart-up"></em></span>
+                                        <span class="nk-menu-text">Stocks</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
                                     <a href="html/crypto/order-history.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-repeat"></em></span>
-                                        <span class="nk-menu-text">Orders</span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-houzz"></em></span>
+                                        <span class="nk-menu-text">Real Estate</span>
+                                        <span class="badge bg-danger">New</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-item">
-                                    <a href="html/crypto/chats.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-chat-circle"></em></span>
-                                        <span class="nk-menu-text">Chats</span>
-                                    </a>
-                                </li>
+
                                 <li class="nk-menu-item">
                                     <a href="html/crypto/profile.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
                                         <span class="nk-menu-text">My Profile</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-item has-sub">
-                                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
-                                        <span class="nk-menu-text">Additional Pages</span>
-                                    </a>
-                                    <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="html/crypto/welcome.html" class="nk-menu-link"><span class="nk-menu-text">Welcome</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/crypto/kyc-application.html" class="nk-menu-link"><span class="nk-menu-text">KYC - Get Started</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/crypto/kyc-form.html" class="nk-menu-link"><span class="nk-menu-text">KYC - Application Form</span></a>
-                                        </li>
-                                    </ul><!-- .nk-menu-sub -->
-                                </li><!-- .nk-menu-item -->
+                             
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title">Return to</h6>
                                 </li>
