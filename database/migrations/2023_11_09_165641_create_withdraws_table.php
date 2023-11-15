@@ -17,8 +17,6 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->string('withdrawal_method');
             $table->double('amount');
-
-            $table->string('paypal_email')->nullable();
             $table->string('usdt_address')->nullable();
             $table->string('btc_address')->nullable();
             $table->string('eth_address')->nullable();

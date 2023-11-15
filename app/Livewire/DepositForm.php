@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Mail\AdminDepositAlert;
 use App\Models\Deposit;
 use App\Models\PaymentMethod;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -41,16 +43,17 @@ class DepositForm extends Component
             'payment_method_id' => 'required',
         ]);
 
-        Deposit::create([
+        $deposit = Deposit::create([
             'amount' => $this->amount,
             'payment_method_id' => $this->payment_method_id,
             'reference' => $this->reference->storeAs('files'),
             'user_id' => Auth::id(),
         ]);
+        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new AdminDepositAlert($deposit));
 
         // Optionally, you can add a success message or redirect here
         session()->flash('success', 'Deposit created successfully!');
-
+        $this->redirect('/user/deposit/status/'.$deposit->id);
     }
 
     public function close()

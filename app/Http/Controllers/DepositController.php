@@ -12,6 +12,11 @@ use ProtoneMedia\Splade\Facades\Splade;
 
 class DepositController extends Controller
 {
+    public function depositHistory()
+    {
+        $deposits = Deposit::whereUserId(\auth()->id())->get();
+        return view('dashboard.deposit.deposit-history', compact('deposits'));
+    }
     public function deposit(Request $request)
     {
         return view('dashboard.deposit.deposit');
@@ -58,13 +63,16 @@ class DepositController extends Controller
             $deposit->payment_method_id = $request->input('payment_method_id');
             $deposit->reference = $input['imagename'];
             $deposit->save();
-//            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new AdminDepositAlert($formData));
-            return redirect()->back()->with('success', "Transaction Sent, Awaiting Approval ");
+            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new AdminDepositAlert($formData));
+            return redirect()->route('user.status', $deposit->id);
         }
-
         return redirect()->back()->with('declined', "Please Upload Your Payment Screenshot ");
+    }
 
-
+    public function status($id)
+    {
+        $deposit = Deposit::findOrFail($id);
+        return view('dashboard.deposit.status', compact('deposit'));
     }
 
     public function cardDeposit()

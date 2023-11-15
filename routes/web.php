@@ -29,12 +29,15 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
     Route::get('deposit/method', [DepositController::class, 'depositMethod'])->name('depositMethod');
     Route::post('crypto-deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
+    Route::get('deposit/status/{id}', [DepositController::class, 'status'])->name('status');
 
     Route::get('trade-room', [TradeController::class, 'trade'])->name('trade');
     Route::post('place/trade-room', [TradeController::class, 'placeTrade'])->name('placeTrade');
     Route::get('close/trade/history', [TradeController::class, 'closeTrades'])->name('closeTrades');
 
     Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
+    Route::post('process/withdrawal', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
+    Route::get('withdrawal/status/{id}', [WithdrawController::class, 'withdrawStatus'])->name('withdrawStatus');
 
 });
 

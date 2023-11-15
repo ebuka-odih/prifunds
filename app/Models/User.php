@@ -29,9 +29,9 @@ class User extends Authenticatable
     public function status()
     {
         if ($this->status == 1){
-            return "<span class='badge bg-danger'>Unverified</span>";
+            return "<span class='user-status user-status-unverified'>Unverified</span>";
         }elseif ($this->status > 1){
-            return "<span class='badge bg-success'>Verified</span>";
+            return "<span class='user-status user-status-verified'>Verified</span>";
         }else{
             return "<span class='badge bg-warning text text-uppercase'>Blocked</span>";
         }
