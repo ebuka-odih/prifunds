@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('icon')->nullable();
+            $table->string('image')->nullable();
             $table->string('name');
             $table->decimal('min_price', 11, 2)->nullable();
             $table->longText('description')->nullable();

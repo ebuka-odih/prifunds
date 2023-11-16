@@ -22,9 +22,8 @@
             <div class="nk-sidebar-element nk-sidebar-head">
                 <div class="nk-sidebar-brand">
                     <a href="{{ route('index') }}" class="logo-link nk-sidebar-logo">
-                        <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                        <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                        <span class="nio-version">Crypto</span>
+                        <img class=" logo-img" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
+{{--                        <span class="nio-version">Crypto</span>--}}
                     </a>
                 </div>
                 <div class="nk-menu-trigger me-n2">
@@ -144,7 +143,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="html/crypto/buy-sell.html" class="nk-menu-link">
+                                    <a href="{{ route('user.stock.list') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-chart-up"></em></span>
                                         <span class="nk-menu-text">Stocks</span>
                                     </a>

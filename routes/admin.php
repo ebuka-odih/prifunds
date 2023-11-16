@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminPaymentMethodController;
+use App\Http\Controllers\Admin\AdminStockController;
 use App\Http\Controllers\Admin\DepositController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
     Route::delete('delete/deposits/{id}', [DepositController::class, 'deleteDeposit'])->name('deleteDeposit');
     Route::post('admin/deposits', [DepositController::class, 'adminDeposit'])->name('adminDeposit');
 
-
     Route::resource('wallet', AdminPaymentMethodController::class);
+    Route::resource('stock', AdminStockController::class);
 });
 

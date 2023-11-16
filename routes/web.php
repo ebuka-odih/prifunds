@@ -4,6 +4,7 @@ use App\Http\Controllers\DepositController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TradeController;
+use App\Http\Controllers\TradeStockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('process/withdrawal', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
     Route::get('withdrawal/status/{id}', [WithdrawController::class, 'withdrawStatus'])->name('withdrawStatus');
 
+    Route::get('stocks', [TradeStockController::class, 'stock'])->name('stock.list');
 });
 
 

@@ -106,7 +106,14 @@
                             <i class="nav-main-link-icon fa fa-users"></i>
                             <span class="nav-main-link-name">Users</span>
                         </a>
-                    </li><li class="nav-main-item">
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('admin.stock.index') }}">
+                            <i class="nav-main-link-icon fa fa-chart-area"></i>
+                            <span class="nav-main-link-name">Add Stocks</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('admin.wallet.create') }}">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Add Wallet</span>
