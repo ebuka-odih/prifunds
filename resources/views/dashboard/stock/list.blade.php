@@ -29,12 +29,11 @@
                     <div class="tranx-list tranx-list-stretch card card-bordered">
                         @foreach($stocks as $item)
                         <div class="tranx-item">
-                            <a href="#">
+                            <a href="{{ route('user.tradeStock', $item->id) }}">
                                 <div class="tranx-col">
                                     <div class="tranx-info">
                                         <div class="tranx-badge">
                                             <img style="border-radius: 50%" height="50" width="50" src="{{ asset('files/'.$item->image) }}" alt="">
-{{--                                            <span class="tranx-icon icon ni ni-sign-eth"></span>--}}
                                         </div>
                                         <div class="tranx-data">
                                             <div class="tranx-label">{{ $item->name }}</div>
@@ -42,7 +41,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="{{ route('user.tradeStock', $item->id) }}">
                                 <div class="tranx-col">
                                     <div class="tranx-amount">
                                         <div class="number">@money($item->min_price) <span class="currency currency-btc">{{ auth()->user()->currency }}</span></div>

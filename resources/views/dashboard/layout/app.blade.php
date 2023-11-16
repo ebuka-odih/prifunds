@@ -202,24 +202,10 @@
                         </div>
                         <div class="nk-header-brand d-xl-none">
                             <a href="{{ route('index') }}" class="logo-link">
-                                <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                                <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                                <span class="nio-version">Crypto</span>
+                               <h3 style="font-weight: bolder; color: white">{{ env('APP_NAME') }}</h3>
                             </a>
                         </div>
-                        <div class="nk-header-news d-none d-xl-block">
-                            <div class="nk-news-list">
-                                <a class="nk-news-item" href="#">
-                                    <div class="nk-news-icon">
-                                        <em class="icon ni ni-card-view"></em>
-                                    </div>
-                                    <div class="nk-news-text">
-                                        <p>Do you know the latest update of 2022? <span> A overview of our is now available on YouTube</span></p>
-                                        <em class="icon ni ni-external"></em>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+
                         <div class="nk-header-tools">
                             <ul class="nk-quick-nav">
 
@@ -227,7 +213,7 @@
                                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                                         <div class="user-toggle">
                                             <div class="user-avatar sm">
-                                                <em class="icon ni ni-user-alt"></em>
+                                                <img src="{{ asset('files/'.auth()->user()->avatar ) }}" alt="">
                                             </div>
                                             <div class="user-info d-none d-md-block">
                                                 <div class="user-status user-status-unverified">{!! auth()->user()->status() !!}</div>
@@ -239,7 +225,7 @@
                                         <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                             <div class="user-card">
                                                 <div class="user-avatar">
-                                                    <span>AB</span>
+                                                    <img src="{{ asset('files/'.auth()->user()->avatar ) }}" alt="">
                                                 </div>
                                                 <div class="user-info">
                                                     <span class="lead-text">{{ auth()->user()->name }}</span>

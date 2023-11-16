@@ -41,6 +41,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('withdrawal/status/{id}', [WithdrawController::class, 'withdrawStatus'])->name('withdrawStatus');
 
     Route::get('stocks', [TradeStockController::class, 'stock'])->name('stock.list');
+    Route::get('trade/stock/{id}', [TradeStockController::class, 'tradeStock'])->name('tradeStock');
+    Route::post('trade/stock', [TradeStockController::class, 'processTrade'])->name('processTrade');
+    Route::get('trade/success/{id}', [TradeStockController::class, 'stockSuccess'])->name('stockSuccess');
 });
 
 

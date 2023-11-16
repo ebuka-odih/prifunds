@@ -65,4 +65,9 @@ class User extends Authenticatable
         return $this->referral_link = route('register', ['ref' => $this->username, 'id'=> $this->id]);
     }
 
+    public function getAvatarAttribute()
+    {
+        return $this->attributes['avatar'] ?? 'user.png';
+    }
+
 }
