@@ -132,8 +132,14 @@
                                 </li>
                                 <li class="nk-menu-item">
                                     <a href="html/crypto/accounts.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-history"></em></span>
+                                        <span class="nk-menu-icon"><em class="icon ni ni-money"></em></span>
                                         <span class="nk-menu-text">Transactions</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('user.forexHistory') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-history"></em></span>
+                                        <span class="nk-menu-text"> History</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
@@ -155,6 +161,7 @@
                                         <span class="badge bg-danger">New</span>
                                     </a>
                                 </li>
+
 
                                 <li class="nk-menu-item">
                                     <a href="html/crypto/profile.html" class="nk-menu-link">

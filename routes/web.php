@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepositController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TradeController;
@@ -44,6 +45,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('trade/stock/{id}', [TradeStockController::class, 'tradeStock'])->name('tradeStock');
     Route::post('trade/stock', [TradeStockController::class, 'processTrade'])->name('processTrade');
     Route::get('trade/success/{id}', [TradeStockController::class, 'stockSuccess'])->name('stockSuccess');
+
+    Route::get('stock/history', [HistoryController::class, 'stockHistory'])->name('stockHistory');
+    Route::get('forex/history', [HistoryController::class, 'forexHistory'])->name('forexHistory');
 });
 
 

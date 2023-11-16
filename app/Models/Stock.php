@@ -20,4 +20,6 @@ class Stock extends Model
     {
         return $this->hasMany(TradeStock::class, 'stock_id');
     }
+
+
 }

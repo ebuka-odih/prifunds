@@ -14,4 +14,17 @@ class TradeStock extends Model
     {
         return $this->belongsTo(Stock::class);
     }
+
+    public function status()
+    {
+        if ($this->status == 0){
+            return "<span class='badge bg-warning'>Open</span>";
+        }elseif ($this->status > 0){
+            return "<span class='badge bg-success'>Traded</span>";
+        }else{
+            return "<span class='badge bg-danger text text-uppercase'>Cancelled</span>";
+        }
+    }
+
+
 }

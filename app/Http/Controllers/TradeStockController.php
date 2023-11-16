@@ -32,7 +32,7 @@ class TradeStockController extends Controller
             $trade->amount = $request->amount;
             $trade->user_id = Auth::id();
             $trade->stock_id = $request->stock_id;
-            $trade->status = 1;
+            $trade->status = 0;
             $trade->save();
             $user = User::findOrFail($trade->user_id);
             $user->balance -= $request->amount;

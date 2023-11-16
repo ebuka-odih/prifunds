@@ -15,7 +15,7 @@
     <link id="skin-default" rel="stylesheet" href="{{ asset('dash/assets/css/theme.css?ver=3.2.0') }}">
 </head>
 
-<body class="nk-body bg-white npc-general pg-auth">
+<body class="nk-body bg-white is-dark npc-general pg-auth dark-mode">
 <div class="nk-app-root">
     <!-- main @s -->
     <div class="nk-main ">
@@ -26,7 +26,8 @@
                 <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                     <div class="brand-logo pb-4 text-center">
                         <a href="{{ route('index') }}" class="logo-link">
-                            <img style="height: 200px; width: 150px" class="logo-img logo-img-lg" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
+                            <h3 style="color: white; font-weight: bolder">{{ env('APP_NAME') }}</h3>
+{{--                            <img style="height: 10em; width: 20em" class="logo-img logo-img-lg" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">--}}
                         </a>
                     </div>
                     <div class="card card-bordered">

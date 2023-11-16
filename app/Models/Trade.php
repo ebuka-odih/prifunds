@@ -18,11 +18,11 @@ class Trade extends Model
     public function status()
     {
         if ($this->status == 0){
-            return "<span class='badge badge-warning'>Open</span>";
+            return "<span class='badge bg-warning'>Open</span>";
         }elseif ($this->status > 0){
-            return "<span class='badge badge-success'>Closed</span>";
+            return "<span class='badge bg-success'>Closed</span>";
         }else{
-            return "<span class='badge badge-danger text text-uppercase'>Cancelled</span>";
+            return "<span class='badge bg-danger text text-uppercase'>Cancelled</span>";
         }
     }
     public function adminStatus()
@@ -35,4 +35,5 @@ class Trade extends Model
             return "<span class='badge bg-danger text text-uppercase'>Cancelled</span>";
         }
     }
+
 }
