@@ -234,8 +234,8 @@
                                             </div>
                                         </div>
                                         <div class="dropdown-inner user-account-info">
-                                            <h6 class="overline-title-alt">Nio Wallet Account</h6>
-                                            <div class="user-balance">12.395769 <small class="currency currency-btc">BTC</small></div>
+                                            <h6 class="overline-title-alt">Account Balance</h6>
+                                            <div class="user-balance">@money(auth()->user()->balance) <small class="currency currency-btc">auth()->user()->currency</small></div>
                                             <a href="{{ route('user.withdraw') }}" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
                                         </div>
                                         <div class="dropdown-inner">
