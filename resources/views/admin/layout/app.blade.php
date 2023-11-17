@@ -114,99 +114,18 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('admin.fund') }}">
+                            <i class="nav-main-link-icon fa fa-money-bill-wave"></i>
+                            <span class="nav-main-link-name">Add Fund</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('admin.wallet.create') }}">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Add Wallet</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                            <i class="nav-main-link-icon fa fa-wrench"></i>
-                            <span class="nav-main-link-name">Components</span>
-                        </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_chat.html">
-                                    <span class="nav-main-link-name">Chat</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_onboarding.html">
-                                    <span class="nav-main-link-name">Onboarding</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_nestable.html">
-                                    <span class="nav-main-link-name">Nestable</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_dialogs.html">
-                                    <span class="nav-main-link-name">Dialogs</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_notifications.html">
-                                    <span class="nav-main-link-name">Notifications</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_loaders.html">
-                                    <span class="nav-main-link-name">Loaders</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_charts.html">
-                                    <span class="nav-main-link-name">Charts</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_gallery.html">
-                                    <span class="nav-main-link-name">Gallery</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_sliders.html">
-                                    <span class="nav-main-link-name">Sliders</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_carousel.html">
-                                    <span class="nav-main-link-name">Carousel</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_rating.html">
-                                    <span class="nav-main-link-name">Rating</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_appear.html">
-                                    <span class="nav-main-link-name">Appear</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_calendar.html">
-                                    <span class="nav-main-link-name">Calendar</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_image_cropper.html">
-                                    <span class="nav-main-link-name">Image Cropper</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_maps_vector.html">
-                                    <span class="nav-main-link-name">Vector Maps</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_syntax_highlighting.html">
-                                    <span class="nav-main-link-name">Syntax Highlighting</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
 
 
                 </ul>

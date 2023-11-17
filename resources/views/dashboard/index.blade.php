@@ -74,7 +74,7 @@
                                                         <div class="nk-wgw-icon">
                                                             <em class="icon ni ni-money"></em>
                                                         </div>
-                                                        <h5 class="nk-wgw-title title">Traded Stock</h5>
+                                                        <h5 class="nk-wgw-title title">Total Invested</h5>
                                                     </div>
                                                     <div class="nk-wgw-balance">
                                                         <div class="amount">4.434953<span class="currency currency-nio">NIO</span></div>
@@ -120,71 +120,7 @@
 
                                 </div><!-- .row -->
                             </div><!-- .nk-block -->
-                            <div class="nk-block nk-block-md">
-                                <div class="nk-block-head-xs">
-                                    <div class="nk-block-between-md g-2">
-                                        <div class="nk-block-head-content">
-                                            <h6 class="nk-block-title title">Fiat Accounts</h6>
-                                        </div>
-                                        <div class="nk-block-head-content">
-                                            <a href="html/crypto/wallets.html" class="link link-primary">See All</a>
-                                        </div>
-                                    </div>
-                                </div><!-- .nk-block-head -->
-                                <div class="row g-2">
-                                    <div class="col-sm-4">
-                                        <div class="card bg-light">
-                                            <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
-                                                    <div class="nk-wgw-name">
-                                                        <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-btc"></em>
-                                                        </div>
-                                                        <h5 class="nk-wgw-title title">NioWallet</h5>
-                                                    </div>
-                                                    <div class="nk-wgw-balance">
-                                                        <div class="amount">4.434953<span class="currency currency-nio">NIO</span></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
-                                    <div class="col-sm-4">
-                                        <div class="card bg-light">
-                                            <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
-                                                    <div class="nk-wgw-name">
-                                                        <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-btc"></em>
-                                                        </div>
-                                                        <h5 class="nk-wgw-title title">Bitcoin Wallet</h5>
-                                                    </div>
-                                                    <div class="nk-wgw-balance">
-                                                        <div class="amount">4.434953<span class="currency currency-btc">BTC</span></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
-                                    <div class="col-sm-4">
-                                        <div class="card bg-light">
-                                            <div class="nk-wgw sm">
-                                                <a class="nk-wgw-inner" href="html/crypto/wallet-bitcoin.html">
-                                                    <div class="nk-wgw-name">
-                                                        <div class="nk-wgw-icon">
-                                                            <em class="icon ni ni-sign-eth"></em>
-                                                        </div>
-                                                        <h5 class="nk-wgw-title title">Ethereum Wallet</h5>
-                                                    </div>
-                                                    <div class="nk-wgw-balance">
-                                                        <div class="amount">0.000560<span class="currency currency-eth">ETH</span></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
-                                </div><!-- .row -->
-                            </div> <!-- .nk-block -->
+
                         </div><!-- .col -->
                     </div><!-- .row -->
                 </div><!-- .nk-block -->

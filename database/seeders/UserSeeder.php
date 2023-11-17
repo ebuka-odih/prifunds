@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'name' => 'User Panel',
                 'username' => 'user',
                 'status' => 1,
-                'admin' => 1,
+                'admin' => 0,
                 'balance' => 500000,
                 'profit' => 600000,
                 'email' => 'user@prifunds.com',
