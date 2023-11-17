@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-
+    Route::get('security', [AdminController::class, 'security'])->name('security');
+    Route::post('security', [AdminController::class, 'storePassword'])->name('storePassword');
     Route::get('user/details/{id}', [UserController::class, 'userDetails'])->name('userDetails');
     Route::get('users', [UserController::class, 'users'])->name('users');
     Route::delete('delete/user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');

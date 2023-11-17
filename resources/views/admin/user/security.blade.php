@@ -17,11 +17,11 @@
         <!-- END Hero -->
 
         <!-- Page Content -->
-        <div class="content">
+        <div class="content ">
 
             <!-- Elements -->
-            <div class="block block-rounded">
-                <div class="block-content">
+            <div class="block block-rounded ">
+                <div class="block-content ">
                     <form action="{{ route('admin.storePassword') }}" method="POST" >
                         <!-- Basic Elements -->
                         @csrf
@@ -39,33 +39,36 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="row push">
+                        <div class="col-lg-6">
+                            <div class="row push">
 
 
-                            <div class="col-lg-8 col-xl-8">
-                                <div class="mb-4">
-                                    <label class="form-label" for="example-email-input">Password</label>
-                                    <input type="password" class="form-control" id="example-email-input" name="current_password" >
+                                <div class="col-lg-8 col-xl-8">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="example-email-input">Password</label>
+                                        <input type="password" class="form-control" id="example-email-input" name="current_password" >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-8 col-xl-8">
-                                <div class="mb-4">
-                                    <label class="form-label" for="example-email-input">New Password</label>
-                                    <input type="password" class="form-control" id="example-email-input" name="new_password" >
+                                <div class="col-lg-8 col-xl-8">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="example-email-input">New Password</label>
+                                        <input type="password" class="form-control" id="example-email-input" name="new_password" >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-8 col-xl-8">
-                                <div class="mb-4">
-                                    <label class="form-label" for="example-email-input">Confirm New Password</label>
-                                    <input type="password" class="form-control" id="example-email-input" name="new_confirm_password" >
+                                <div class="col-lg-8 col-xl-8">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="example-email-input">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="example-email-input" name="new_confirm_password" >
+                                    </div>
                                 </div>
-                            </div>
 
 
-                            <div class="col-lg-6">
-                                <button type="submit" class="btn btn-secondary">Update Password</button>
+                                <div class="col-lg-6">
+                                    <button type="submit" class="btn btn-secondary">Update Password</button>
+                                </div>
                             </div>
                         </div>
+
 
                         <!-- END Basic Elements -->
 

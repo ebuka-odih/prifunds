@@ -175,6 +175,13 @@
                             <span class="nav-main-link-name">Add Wallet</span>
                         </a>
                     </li>
+                    <li class="nav-main-heading">Security</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main"  href="{{ route('admin.security') }}">
+                            <i class="nav-main-link-icon fa fa-shield-alt"></i>
+                            <span class="nav-main-link-name">Change Password</span>
+                        </a>
+                    </li>
 
 
 
