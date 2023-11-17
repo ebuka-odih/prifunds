@@ -22,7 +22,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::patch('updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
-    Route::post('storePassword', [UserController::class, 'storePassword'])->name('storePassword');
+    Route::get('setting', [UserController::class, 'setting'])->name('setting');
+    Route::get('security', [UserController::class, 'security'])->name('security');
+    Route::post('change/password', [UserController::class, 'changePasswordSave'])->name('changePasswordSave');
 
     Route::get('kyc', [KYCController::class, 'kyc'])->name('kyc');
     Route::post('store/kyc', [KYCController::class, 'storeKyc'])->name('storeKyc');

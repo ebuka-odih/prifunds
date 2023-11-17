@@ -17,7 +17,7 @@
                                     <a class="nav-link"  href="{{ route('user.stockHistory') }}" >Stock Trades</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tabItem11" aria-selected="false" role="tab" tabindex="-1">Notifications</a>
+                                    <a class="nav-link" href="#tabItem11" >Real Estate</a>
                                 </li>
                             </ul>
                         </div>

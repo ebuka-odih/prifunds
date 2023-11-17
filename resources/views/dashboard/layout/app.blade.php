@@ -101,7 +101,7 @@
                                     <li><a href="{{ route('user.deposit') }}" class="link"><span>Add Funds</span> <em class="icon ni ni-wallet-in"></em></a></li>
                                 </ul>
                                 <ul class="link-list">
-                                    <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                    <li><a href="{{ route('user.profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
                                     <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
                                 </ul>
                                 <ul class="link-list">
@@ -155,7 +155,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="html/crypto/order-history.html" class="nk-menu-link">
+                                    <a href="#" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-houzz"></em></span>
                                         <span class="nk-menu-text">Real Estate</span>
                                         <span class="badge bg-danger">New</span>
@@ -164,7 +164,7 @@
 
 
                                 <li class="nk-menu-item">
-                                    <a href="html/crypto/profile.html" class="nk-menu-link">
+                                    <a href="{{ route('user.profile') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
                                         <span class="nk-menu-text">My Profile</span>
                                     </a>
