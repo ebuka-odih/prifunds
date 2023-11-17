@@ -94,23 +94,55 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard.html">
+                        <a class="nav-main-link" href="{{ route('admin.withdrawal') }}">
                             <i class="nav-main-link-icon fa fa-arrow-up"></i>
                             <span class="nav-main-link-name">Withdrawal</span>
                         </a>
                     </li>
+                    <li class="nav-main-heading">Investment / Trading</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-chart-area"></i>
+                            <span class="nav-main-link-name">Forex</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('admin.trades.open') }}">
+                                    <span class="nav-main-link-name">Open Trades</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('admin.trades.close') }}">
+                                    <span class="nav-main-link-name">Close Trades</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-chart-pie"></i>
+                            <span class="nav-main-link-name">Stocks</span>
+                        </a>
+                        <ul class="nav-main-submenu">
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('admin.stock.index') }}">
+                                    <span class="nav-main-link-name">Invested Stocks</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="{{ route('admin.stock.create') }}">
+                                    <span class="nav-main-link-name">Add Stocks</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="nav-main-heading">Extend</li>
+
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('admin.users') }}">
                             <i class="nav-main-link-icon fa fa-users"></i>
                             <span class="nav-main-link-name">Users</span>
-                        </a>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('admin.stock.index') }}">
-                            <i class="nav-main-link-icon fa fa-chart-area"></i>
-                            <span class="nav-main-link-name">Add Stocks</span>
                         </a>
                     </li>
                     <li class="nav-main-item">

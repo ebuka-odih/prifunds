@@ -4,19 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Stock;
+use App\Models\TradeStock;
 use Illuminate\Http\Request;
 
 class AdminStockController extends Controller
 {
     public function index()
     {
-        $stocks = Stock::all();
-        return view('admin.stock.stocks', compact('stocks'));
+        $stocks = TradeStock::all();
+        return view('admin.stock.invested', compact('stocks'));
     }
 
     public function create()
     {
-
+        $stocks = Stock::all();
+        return view('admin.stock.create', compact('stocks'));
     }
 
     public function store(Request $request)

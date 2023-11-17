@@ -70,6 +70,29 @@ class User extends Authenticatable
         return $this->attributes['avatar'] ?? 'user.png';
     }
 
+    public function withdrawal()
+    {
+        return $this->hasMany(Withdraw::class, 'user_id');
+    }
+    public function deposit()
+    {
+        return $this->hasMany(Deposit::class, 'user_id');
+    }
+    public function funding()
+    {
+        return $this->hasMany(Funding::class, 'user_id');
+    }
+
+    public function trade()
+    {
+        return $this->hasMany(Trade::class, 'user_id');
+    }
+    public function trade_stock()
+    {
+        return $this->hasMany(TradeStock::class, 'user_id');
+    }
+
+
 
 
 }

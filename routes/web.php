@@ -9,11 +9,7 @@ use App\Http\Controllers\TradeStockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
-
-
 use Livewire\Livewire;
-
-
 
 
 Route::view('/', 'pages.index')->name('index');
