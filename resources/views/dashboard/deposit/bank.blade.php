@@ -16,7 +16,7 @@
                                 <h6 class="card-subtitle mb-2 ff-base">Please contact our support for our bank details</h6>
                                 <a href="mailto:support@prifunds.com">support@prifunds.com</a>
                                 <br>
-                                <p class="text-white mt-4">Your deposit will be added to you account upon confirmation</p>
+                                <p class="text-white mt-4">NOTE: Your deposit will be added to you account upon confirmation.</p>
                             </div>
                         </div>
 
