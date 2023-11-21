@@ -37,6 +37,17 @@ class User extends Authenticatable
         }
     }
 
+    public function adminStatus()
+    {
+        if ($this->status == 0){
+            return "<span class='badge bg-danger'>Unverified</span>";
+        }elseif ($this->status > 0){
+            return "<span class='badge bg-success'>Verified</span>";
+        }else{
+            return "<span class='badge bg-warning text text-uppercase'>Blocked</span>";
+        }
+    }
+
     protected $appends = ['referral_link'];
     protected $with = ['referredBy'];
 

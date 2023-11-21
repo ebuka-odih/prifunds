@@ -17,10 +17,12 @@ class DepositController extends Controller
         $deposits = Deposit::whereUserId(\auth()->id())->get();
         return view('dashboard.deposit.deposit-history', compact('deposits'));
     }
+
     public function deposit(Request $request)
     {
         return view('dashboard.deposit.deposit');
     }
+
     public function depositMethod(Request $request)
     {
         if ($request->deposit_method == 'crypto'){
@@ -29,8 +31,10 @@ class DepositController extends Controller
 
         }elseif ($request->deposit_method == 'card'){
             return view('dashboard.deposit.card');
+        }elseif ($request->deposit_method == 'bank'){
+            return view('dashboard.deposit.bank');
         }
-        return view('dashboard.deposit.deposit');
+        return redirect()->back();
     }
 
     public function fetchWalletAddress($paymentMethodId) {
@@ -75,10 +79,6 @@ class DepositController extends Controller
         return view('dashboard.deposit.status', compact('deposit'));
     }
 
-    public function cardDeposit()
-    {
-       $wallets = PaymentMethod::all();
-       return view('dashboard.deposit.card-deposit', compact('wallets'));
-    }
+
 
 }

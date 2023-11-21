@@ -47,7 +47,7 @@
                                     </td>
 
                                     <td class="d-none d-sm-table-cell">
-                                        {!! $item->status() !!}
+                                        {!! $item->adminStatus() !!}
                                     </td>
                                     <td class="d-none d-sm-table-cell">
                                         {{ date('Y-m-d', strtotime($item->created_at)) }}

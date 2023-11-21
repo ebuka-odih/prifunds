@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deposit;
+use App\Models\TradeProperty;
+use App\Models\TradeStock;
 use App\Models\User;
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,8 +16,12 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
+        $stock = TradeStock::whereUserId(\auth()->id())->select('amount')->sum('amount');
+        $r_estate = TradeProperty::whereUserId(\auth()->id())->select('amount')->sum('amount');
+        $asset = $stock + $r_estate;
         $deposit = Deposit::whereUserId(\auth()->id())->select('amount')->sum('amount');
-        return view('dashboard.index', compact('user', 'deposit'));
+        $withdrawal = Withdraw::whereUserId(\auth()->id())->select('amount')->sum('amount');
+        return view('dashboard.index', compact('user', 'deposit', 'asset', 'withdrawal'));
     }
 
     public function profile()

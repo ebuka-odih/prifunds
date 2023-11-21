@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deposits', function (Blueprint $table) {
+        Schema::create('trade_properties', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->bigInteger('properties_id');
             $table->bigInteger('user_id');
-            $table->double('amount')->nullable();
+            $table->double('amount');
             $table->integer('status')->default(0);
-            $table->string('reference')->nullable();
-            $table->string('to')->nullable();
-            $table->string('method')->nullable();
-            $table->bigInteger('payment_method_id')->nullable();
+            $table->boolean('completed')->default(false);
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deposits');
+        Schema::dropIfExists('trade_properties');
     }
 };

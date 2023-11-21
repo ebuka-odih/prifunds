@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CardDepositController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\KYCController;
@@ -37,6 +38,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('deposit/method', [DepositController::class, 'depositMethod'])->name('depositMethod');
     Route::post('crypto-deposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
     Route::get('deposit/status/{id}', [DepositController::class, 'status'])->name('status');
+
+    // Card Deposit Route
+    Route::post('card/deposit', [CardDepositController::class, 'generatePaymentUrl'])->name('generatePaymentUrl');
 
     Route::get('trade-room', [TradeController::class, 'trade'])->name('trade');
     Route::post('place/trade-room', [TradeController::class, 'placeTrade'])->name('placeTrade');

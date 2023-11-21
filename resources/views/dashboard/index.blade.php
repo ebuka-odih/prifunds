@@ -61,7 +61,7 @@
                                             <h5 class="nk-block-title title">Account Summary</h5>
                                         </div>
                                         <div class="nk-block-head-content">
-                                            <a href="html/crypto/wallets.html" class="link link-primary">See All</a>
+{{--                                            <a href="html/crypto/wallets.html" class="link link-primary">See All</a>--}}
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
@@ -77,7 +77,7 @@
                                                         <h5 class="nk-wgw-title title">Total Invested</h5>
                                                     </div>
                                                     <div class="nk-wgw-balance">
-                                                        <div class="amount">4.434953<span class="currency currency-nio">NIO</span></div>
+                                                        <div class="amount">@money($asset)<span class="currency currency-nio">{{ $user->currency }}</span></div>
                                                     </div>
                                                 </a>
                                             </div>
@@ -111,7 +111,7 @@
                                                         <h5 class="nk-wgw-title title">Total Withdrawal</h5>
                                                     </div>
                                                     <div class="nk-wgw-balance">
-                                                        <div class="amount">@money($deposit)<span class="currency currency-btc">{{ $user->currency }}</span></div>
+                                                        <div class="amount">@money($withdrawal)<span class="currency currency-btc">{{ $user->currency }}</span></div>
                                                     </div>
                                                 </a>
                                             </div>

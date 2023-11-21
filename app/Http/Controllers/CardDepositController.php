@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deposit;
+use App\Models\PaymentMethod;
 use App\Models\User;
+use Exception;
+use Flutterwave\Payments\Facades\Flutterwave;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CardDepositController extends Controller
 {
+
+    public function cardDeposit()
+    {
+        $wallets = PaymentMethod::all();
+        return view('dashboard.deposit.card-deposit', compact('wallets'));
+    }
 
     public function generatePaymentUrl(Request $request){
         $user = User::findOrFail($request->user_id);
@@ -14,7 +25,7 @@ class CardDepositController extends Controller
         $payload = [
             "tx_ref" => Flutterwave::generateTransactionReference(),
             "amount" => $request->amount,
-            "currency" => "NGN",
+            "currency" => "USD",
             "customer" => [
                 "email" => $user->email
             ],
@@ -24,8 +35,7 @@ class CardDepositController extends Controller
         ];
 
         $payment_link = Flutterwave::render('standard', $payload);
-
-        return $this->successResponse('payment link',['paymentUrl' => $payment_link]);
+        return redirect($payment_link);
 
     }
 
@@ -45,18 +55,23 @@ class CardDepositController extends Controller
 
                 $user_id = $data['data']['meta']['user_id'];
                 $amount = $payment['amount'];
-                $description = "Wallet funding via flutterwave";
+                $reference = "Wallet funding via flutterwave";
                 if($payment['status'] == "successful"){
-                    return ( new PaymentController )->payment_success($payment, $user_id, $amount, $description, $method);
+                    $deposit = new Deposit();
+                    $deposit->amount = $amount;
+                    $deposit->reference = $reference;
+                    $deposit->user_id = Auth::id();
+                    $deposit->save();
+                    return ( new Deposit() )->payment_success($payment, $user_id, $amount, $reference, $method);
                 }else{
-                    return ( new PaymentController )->payment_failed();
+                    return ( new Deposit() )->payment_failed();
                 }
             }
             catch(Exception $e){
-                return ( new PaymentController )->payment_failed();
+                return ( new Deposit() )->payment_failed();
             }
         }
-        return ( new PaymentController )->payment_failed();
+        return ( new Deposit() )->payment_failed();
     }
 
 
