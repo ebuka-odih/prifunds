@@ -22,7 +22,7 @@
                         <div class="card-inner">
                             <div class="card-title-group">
                                 <div class="card-title">
-                                    <h5 class="title">All Deposits</h5>
+                                    <h5 class="title">All Withdrawal</h5>
                                 </div>
 
                                 <!-- card-tools -->
@@ -56,40 +56,40 @@
                                 <!-- tb-tnx-item -->
                                 </thead>
                                 <tbody>
-                                @foreach($deposits as $item)
-                                <tr class="tb-tnx-item">
-                                    <td class="tb-tnx-id">
-                                         <span class="text-primary">{{ $item->transID() }}</span>
-                                    </td>
-                                    <td class="tb-tnx-info">
-                                        <div class="tb-tnx-date">
-                                            <span class="date">{{ date('d-m-Y', strtotime($item->created_at)) }}</span>
-                                        </div>
-                                    </td>
-                                    <td class="tb-tnx-amount is-alt">
-                                        <div class="tb-tnx-total">
-                                            <span class="amount">@money($item->amount)</span>
-                                        </div>
-                                        <div class="tb-tnx-status">
-                                            {!! $item->status() !!}
-                                        </div>
-                                    </td>
-                                    <td class="tb-tnx-action">
-                                        <div class="dropdown">
-                                            <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown">
-                                                <em class="icon ni ni-more-h"></em>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
-                                                <ul class="link-list-plain">
-                                                    <li>
-{{--                                                        <a href="#">View</a>--}}
-                                                    </li>
-
-                                                </ul>
+                                @foreach($withdraw as $item)
+                                    <tr class="tb-tnx-item">
+                                        <td class="tb-tnx-id">
+                                            <span class="text-primary">{{ $item->transID() }}</span>
+                                        </td>
+                                        <td class="tb-tnx-info">
+                                            <div class="tb-tnx-date">
+                                                <span class="date">{{ date('d-m-Y', strtotime($item->created_at)) }}</span>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td class="tb-tnx-amount is-alt">
+                                            <div class="tb-tnx-total">
+                                                <span class="amount">@money($item->amount)</span>
+                                            </div>
+                                            <div class="tb-tnx-status">
+                                                {!! $item->status() !!}
+                                            </div>
+                                        </td>
+                                        <td class="tb-tnx-action">
+                                            <div class="dropdown">
+                                                <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown">
+                                                    <em class="icon ni ni-more-h"></em>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                    <ul class="link-list-plain">
+                                                        <li>
+                                                            {{--                                                        <a href="#">View</a>--}}
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 <!-- tb-tnx-item -->
 

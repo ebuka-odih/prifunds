@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('forex/history', [HistoryController::class, 'forexHistory'])->name('forexHistory');
 
     Route::get('transaction/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
+    Route::get('transaction/withdrawal', [TransactionsController::class, 'withdrawHistory'])->name('withdrawHistory');
 });
 
 

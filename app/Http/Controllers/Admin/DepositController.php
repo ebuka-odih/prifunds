@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ApproveDeposit;
 use App\Models\Deposit;
 use App\Models\PaymentMethod;
 use App\Models\User;
@@ -58,4 +59,5 @@ class DepositController extends Controller
         $user->save();
         return redirect()->back()->with('success', 'deposit send successfully');
     }
+
 }
