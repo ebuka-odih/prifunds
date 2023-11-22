@@ -7,6 +7,7 @@ use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TradeStockController;
+use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('stock/history', [HistoryController::class, 'stockHistory'])->name('stockHistory');
     Route::get('forex/history', [HistoryController::class, 'forexHistory'])->name('forexHistory');
+
+    Route::get('transaction/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
 });
 
 

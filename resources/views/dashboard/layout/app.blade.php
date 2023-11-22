@@ -102,7 +102,7 @@
                                 </ul>
                                 <ul class="link-list">
                                     <li><a href="{{ route('user.profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                    <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                    <li><a href="{{ route('user.setting') }}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
                                 </ul>
                                 <ul class="link-list">
                                     <li>
@@ -131,7 +131,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="html/crypto/accounts.html" class="nk-menu-link">
+                                    <a href="{{ route('user.depositHistory') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-money"></em></span>
                                         <span class="nk-menu-text">Transactions</span>
                                     </a>
@@ -242,13 +242,13 @@
                                         </div>
                                         <div class="dropdown-inner user-account-info">
                                             <h6 class="overline-title-alt">Account Balance</h6>
-                                            <div class="user-balance">@money(auth()->user()->balance) <small class="currency currency-btc">auth()->user()->currency</small></div>
+                                            <div class="user-balance">@money(auth()->user()->balance) <small class="currency currency-btc">{{ auth()->user()->currency }}</small></div>
                                             <a href="{{ route('user.withdraw') }}" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
                                         </div>
                                         <div class="dropdown-inner">
                                             <ul class="link-list">
-                                                <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                <li><a href="{{ route('user.profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                <li><a href="{{ route('user.setting') }}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
                                             </ul>
                                         </div>
                                         <div class="dropdown-inner">

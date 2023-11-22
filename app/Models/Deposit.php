@@ -9,4 +9,9 @@ class Deposit extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function transID()
+    {
+        return $this->id."3435";
+    }
 }

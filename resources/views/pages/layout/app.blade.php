@@ -102,7 +102,7 @@
     <div class="container giant-top giant-bottom">
         <div class="_3-2-1-1-grid">
             <div id="w-node-_32d9902d-0464-c251-572e-a8aa9549874b-f84df573">
-                <h3 class="white-text _700">Frequently Asked Qustions</h3>
+                <h3 class="white-text _700">Frequently Asked Questions</h3>
             </div>
             <div id="w-node-_2c79318a-44ed-de2b-4759-fdc245e35890-f84df573">
                 <div class="faq-wrapper">
@@ -138,7 +138,7 @@
                             </div>
                         </a>
                         <div style="width:100%;height:0PX" class="faq-content">
-                            <p class="faq-paragraph">Data is important to us. And thats why we want to make it known that you own your data. {{ env('APP_NAME') }} does not sell or advertise your data, and we are 100% secure.</p>
+                            <p class="faq-paragraph">Data is important to us. And that is why we want to make it known that you own your data. {{ env('APP_NAME') }} does not sell or advertise your data, and we are 100% secure.</p>
                         </div>
                     </div>
                     <div data-w-id="bf5cd702-0e1d-1218-4e1d-36397a824948" class="faq-question-wrap">
@@ -171,8 +171,8 @@
                 <a href="{{ route('login') }}" class="footer-link-light _5em-bottom-margin">Help Centre</a>
 
                 <a href="mailto:support@{{ env('APP_NAME') }}.com" class="footer-link-light _5em-bottom-margin">Contact Us</a>
-                <p style="margin-bottom: 5px"> Email: <a style="color: white" href="mailto:support@{{ env('APP_NAME') }}.com" class="footer-link-light _5em-bottom-margin">support@{{ env('APP_NAME') }}.com</a></p>
-                <p style="margin-bottom: 5px"> phone Number: <a style="color: white"  class="footer-link-light _5em-bottom-margin">+1 718-814-3801</a></p>
+                <p style="margin-bottom: 5px"> Email: <a style="color: white" href="mailto:support@prifunds.com" class="footer-link-light _5em-bottom-margin">support@prifunds.com</a></p>
+{{--                <p style="margin-bottom: 5px"> phone Number: <a style="color: white"  class="footer-link-light _5em-bottom-margin">+1 718-814-3801</a></p>--}}
                 <p style="margin: 5px 5px; color: white">Address: Head Office <br>
                     405 Lexington Avenue, New York City, NY, 10174
                 </p>
