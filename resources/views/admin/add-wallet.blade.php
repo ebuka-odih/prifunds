@@ -81,7 +81,6 @@
                                             <td class="fw-semibold"> {{ $item->name }}</td>
                                             <td class="d-none d-sm-table-cell"> {{ $item->value }}</td>
                                             <td>
-                                                <a class="btn btn-sm btn-primary mb-2" href="{{ route('admin.wallet.edit', $item->id) }}">Edit</a>
                                                 <form method="POST" action="{!! route('admin.wallet.destroy', $item->id) !!}" accept-charset="UTF-8">
                                                     <input name="_method" value="DELETE" type="hidden">
                                                     {{ csrf_field() }}

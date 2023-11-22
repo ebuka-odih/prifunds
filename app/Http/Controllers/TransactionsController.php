@@ -12,4 +12,5 @@ class TransactionsController extends Controller
         $deposits = Deposit::whereUserId(auth()->id())->get();
         return view('dashboard.transaction.deposit-history', compact('deposits'));
     }
+
 }

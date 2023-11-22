@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8" />
     <title>Trading Journal to Help You Become a Profitable Trader.</title>
-    <meta content="Ggain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" name="description" />
+    <meta content="Gain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" name="description" />
     <meta content="Trading Journal to Help You Become a Profitable Trader." property="og:title" />
-    <meta content="Ggain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" property="og:description" />
+    <meta content="Gain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" property="og:description" />
     <meta content="Trading Journal to Help You Become a Profitable Trader." property="twitter:title" />
-    <meta content="Ggain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" property="twitter:description" />
+    <meta content="Gain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!" property="twitter:description" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -88,6 +88,7 @@
             text-decoration: none;
         }
     </style>
+    <script src="//code.jivosite.com/widget/mFUCXZvcxs" async></script>
 
 </head>
 <body>

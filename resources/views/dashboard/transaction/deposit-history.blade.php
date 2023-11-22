@@ -1,26 +1,28 @@
 @extends('dashboard.layout.app') @section('content') <div class="nk-content nk-content-fluid">
     <div class="container-xl wide-lg">
         <div class="nk-content-body">
-            <div class="nk-block-head nk-block-head-sm">
-                <div class="nk-block-between g-3">
-                    <div class="nk-block-head-content">
-                        <h3 class="nk-block-title page-title">Deposit History</h3>
-                        <div class="nk-block-des text-soft">
-                            <p>You have total 937 orders.</p>
-                        </div>
-                    </div>
-                    <!-- .nk-block-head-content -->
-                </div>
-                <!-- .nk-block-between -->
-            </div>
+
             <!-- .nk-block-head -->
             <div class="nk-block">
+                <div class="card card-bordered card-preview">
+                    <div class="card-inner">
+                        <ul class="nav nav-tabs nav-tabs-s2 mt-n2" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active"  href="{{ route('user.forexHistory') }}" >Deposit History</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link"  href="{{ route('user.stockHistory') }}" >Withdrawal History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="card card-bordered card-stretch">
                     <div class="card-inner-group">
                         <div class="card-inner">
                             <div class="card-title-group">
                                 <div class="card-title">
-                                    <h5 class="title">All Orders</h5>
+                                    <h5 class="title">All Deposits</h5>
                                 </div>
 
                                 <!-- card-tools -->
@@ -36,16 +38,12 @@
                                         <span class="">#</span>
                                     </th>
                                     <th class="tb-tnx-info">
-                      <span class="tb-tnx-desc d-none d-sm-inline-block">
-                        <span>Bill For</span>
-                      </span>
-                                        <span class="tb-tnx-date d-md-inline-block d-none">
-                        <span class="d-md-none">Date</span>
-                        <span class="d-none d-md-block">
-                          <span>Issue Date</span>
-                          <span>Due Date</span>
-                        </span>
-                      </span>
+                                     <span class="tb-tnx-date d-md-inline-block d-none">
+                                            <span class="d-md-none">Date</span>
+                                            <span class="d-none d-md-block">
+                                              <span>Date</span>
+                                            </span>
+                                      </span>
                                     </th>
                                     <th class="tb-tnx-amount is-alt">
                                         <span class="tb-tnx-total">Total</span>
@@ -61,25 +59,19 @@
                                 @foreach($deposits as $item)
                                 <tr class="tb-tnx-item">
                                     <td class="tb-tnx-id">
-                                        <a href="#">
-                                            <span>4947</span>
-                                        </a>
+                                         <span class="text-primary">{{ $item->transID() }}</span>
                                     </td>
                                     <td class="tb-tnx-info">
-                                        <div class="tb-tnx-desc">
-                                            <span class="title">Enterprize Year Subscrition</span>
-                                        </div>
                                         <div class="tb-tnx-date">
-                                            <span class="date">10-05-2019</span>
-                                            <span class="date">10-13-2019</span>
+                                            <span class="date">{{ date('d-m-Y', strtotime($item->created_at)) }}</span>
                                         </div>
                                     </td>
                                     <td class="tb-tnx-amount is-alt">
                                         <div class="tb-tnx-total">
-                                            <span class="amount">$599.00</span>
+                                            <span class="amount">@money($item->amount)</span>
                                         </div>
                                         <div class="tb-tnx-status">
-                                            <span class="badge badge-dot bg-warning">Due</span>
+                                            {!! $item->status() !!}
                                         </div>
                                     </td>
                                     <td class="tb-tnx-action">
@@ -90,14 +82,9 @@
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
                                                 <ul class="link-list-plain">
                                                     <li>
-                                                        <a href="#">View</a>
+{{--                                                        <a href="#">View</a>--}}
                                                     </li>
-                                                    <li>
-                                                        <a href="#">Edit</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Remove</a>
-                                                    </li>
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -127,4 +114,6 @@
             <!-- .nk-block -->
         </div>
     </div>
-</div> @endsection
+</div>
+
+@endsection

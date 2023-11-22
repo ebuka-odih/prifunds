@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <meta name="description" content="Gain deeper insight into your trading behavior to drive sustainable profits through the power of {{ env('APP_NAME') }} journal. Start seeing actionable results today!">
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
@@ -11,6 +11,9 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('dash/assets/css/dashlite.css?ver=3.2.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('dash/assets/css/theme.css?ver=3.2.0') }}">
+
+    <script src="//code.jivosite.com/widget/mFUCXZvcxs" async></script>
+
 </head>
 
 <body class="nk-body npc-crypto bg-white is-dark has-sidebar dark-mode">

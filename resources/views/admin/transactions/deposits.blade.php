@@ -62,7 +62,7 @@
 
                                                     <tr>
                                                         <td class="text-center">
-                                                            {{ optional($item->user)->fullname() }}<br>
+                                                            {{ optional($item->user)->name }}<br>
                                                         </td>
                                                         <td class="fw-semibold">
                                                             {{ date('d-M-y', strtotime($item->created_at)) }}
@@ -74,10 +74,10 @@
 
                                                         <td >
                                                             @if($item->status == 0)
-                                                                <a href="{{ route('admin.view_deposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View Deposit" data-bs-original-title="View">
+                                                                <a href="{{ route('admin.viewDeposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View Deposit" data-bs-original-title="View">
                                                                     <i class="fa fa-eye"></i>
                                                                 </a>
-                                                                <a href="{{ route('admin.approve_deposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve Deposit" data-bs-original-title="Approve">
+                                                                <a href="{{ route('admin.approveDeposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve Deposit" data-bs-original-title="Approve">
                                                                     <i class="fa fa-check"></i>
                                                                 </a>
                                                                 {{--                                                    <a href="{{ route('admin.approve_deposit', $item->id) }}" class="btn btn-sm btn-success mb-1">Approve</a>--}}
@@ -173,7 +173,7 @@
                                     <select name="user_id" id="" class="form-control" required="">
                                         <option >Select User...</option>
                                         @foreach($users as $item)
-                                            <option value="{{ $item->id }}">{{ $item->fullname() }}</option>
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
