@@ -8,10 +8,10 @@
                     <div class="card-inner">
                         <ul class="nav nav-tabs nav-tabs-s2 mt-n2" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active"  href="{{ route('user.depositHistory') }}" >Deposit History</a>
+                                <a class="nav-link"  href="{{ route('user.depositHistory') }}" >Deposit History</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link"  href="{{ route('user.withdrawHistory') }}" >Withdrawal History</a>
+                                <a class="nav-link active"  href="{{ route('user.withdrawHistory') }}" >Withdrawal History</a>
                             </li>
                         </ul>
                     </div>
