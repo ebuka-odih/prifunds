@@ -9,7 +9,7 @@ class TransactionsController extends Controller
 {
     public function depositHistory()
     {
-        $deposits = Deposit::whereUserId(auth()->id())->get();
+        $deposits = Deposit::whereUserId(auth()->id())->latest()->get();
         return view('dashboard.transaction.deposit-history', compact('deposits'));
     }
 
