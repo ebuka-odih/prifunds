@@ -3,6 +3,7 @@
 use App\Http\Controllers\CardDepositController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\InvestPackageController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TradeController;
@@ -20,8 +21,6 @@ Route::view('/blog', 'pages.blog')->name('blog');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/privacy', 'pages.privacy')->name('privacy');
 Route::view('/payment-method', 'pages.payment')->name('payment');
-Route::view('/cgi-syss/suspendedpage', 'welcome')->name('welcome');
-
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
@@ -61,6 +60,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('transaction/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
     Route::get('transaction/withdrawal', [TransactionsController::class, 'withdrawHistory'])->name('withdrawHistory');
+
+    Route::get('investment/plans', [InvestPackageController::class, 'plans'])->name('plans');
 });
 
 

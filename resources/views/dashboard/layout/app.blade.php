@@ -158,6 +158,12 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
+                                    <a href="{{ route('user.plans') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-behance-fill"></em></span>
+                                        <span class="nk-menu-text">Subscription</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
                                     <a href="#" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-houzz"></em></span>
                                         <span class="nk-menu-text">Real Estate</span>
