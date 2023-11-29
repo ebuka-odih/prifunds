@@ -164,7 +164,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="#" class="nk-menu-link">
+                                    <a href="{{ route('user.properties') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-houzz"></em></span>
                                         <span class="nk-menu-text">Real Estate</span>
                                         <span class="badge bg-danger">New</span>

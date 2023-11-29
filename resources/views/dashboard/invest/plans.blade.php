@@ -7,10 +7,8 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between g-3">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Pricing Table</h3>
-                            <div class="nk-block-des text-soft">
-                                <p>Choose your pricing plan and start enjoying our service.</p>
-                            </div>
+                            <h3 class="nk-block-title page-title">Subscription Plans</h3>
+                           
                         </div>
                     </div>
                 </div><!-- .nk-block-head -->

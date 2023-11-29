@@ -6,6 +6,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\InvestPackageController;
 use App\Http\Controllers\KYCController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TradeStockController;
 use App\Http\Controllers\TransactionsController;
@@ -62,6 +63,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('transaction/withdrawal', [TransactionsController::class, 'withdrawHistory'])->name('withdrawHistory');
 
     Route::get('investment/plans', [InvestPackageController::class, 'plans'])->name('plans');
+
+    Route::get('properties/list', [PropertyController::class, 'list'])->name('properties');
 });
 
 

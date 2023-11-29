@@ -33,7 +33,7 @@
                                 <div class="tranx-col">
                                     <div class="tranx-info">
                                         <div class="tranx-badge">
-                                            <img style="border-radius: 50%" height="50" width="50" src="{{ asset('files/'.$item->image) }}" alt="">
+                                            <img style="border-radius: 50%" height="50" width="50" src="{{ asset('https://admin.prifunds.com/files/'.$item->image) }}" alt="">
                                         </div>
                                         <div class="tranx-data">
                                             <div class="tranx-label">{{ $item->name }}</div>
