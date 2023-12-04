@@ -17,7 +17,7 @@
                         @foreach($properties as $item)
                             <div class="col-sm-6 col-lg-4">
                             <div class="gallery card card-bordered">
-                                <a class="gallery-image popup-image" href="./images/stock/a.jpg">
+                                <a class="" href="{{ route('user.showDetails', $item->id) }}">
                                     @foreach ($item->images as $image)
                                         @if($loop->first)
                                             <div class="new-arrivals-img-contnent">

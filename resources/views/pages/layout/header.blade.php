@@ -2,7 +2,9 @@
     <div data-collapse="medium" data-animation="default" data-duration="0" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
         <div class="brand-wrapper-large">
             <a href="{{ route('index') }}" >
-                <h3 style="font-weight: bolder; color: white">{{ env('APP_NAME') }}</h3>
+{{--                <h3 style="font-weight: bolder; color: white">{{ env('APP_NAME') }}</h3>--}}
+                <img class="logo-img" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
+
             </a>
         </div>
 

@@ -26,8 +26,8 @@
                 <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                     <div class="brand-logo pb-4 text-center">
                         <a href="{{ route('index') }}" class="logo-link">
-                            <h3 style="color: white; font-weight: bolder">{{ env('APP_NAME') }}</h3>
-{{--                            <img style="height: 10em; width: 20em" class="logo-img logo-img-lg" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">--}}
+{{--                            <h3 style="color: white; font-weight: bolder">{{ env('APP_NAME') }}</h3>--}}
+                            <img style="" class="logo-img logo-img-lg" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
                         </a>
                     </div>
                     <div class="card card-bordered">

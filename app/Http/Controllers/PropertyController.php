@@ -12,4 +12,10 @@ class PropertyController extends Controller
         $properties = Property::all();
         return view('dashboard.property.list', compact('properties'));
     }
+    public function showDetails($id)
+    {
+        $property = Property::findOrFail($id);
+        return view('dashboard.property.details', compact('property'));
+    }
+
 }

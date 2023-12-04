@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('investment/plans', [InvestPackageController::class, 'plans'])->name('plans');
 
     Route::get('properties/list', [PropertyController::class, 'list'])->name('properties');
+    Route::get('property/{id}', [PropertyController::class, 'showDetails'])->name('showDetails');
 });
 
 
